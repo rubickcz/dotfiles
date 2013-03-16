@@ -32,13 +32,16 @@ alias wifi='wicd-curses'
 complete -cf sudo
 complete -cf man
 
-# Functions
+
+############### Functions ###############
 
 ## Backup file
+## usage: bak <file>
 bak    () { cp -ip "$1" "$1.bak"; }
 
 ## Archive extractor
-ex ()
+## usage: extract <file>
+extract ()
 {
   if [ -f $1 ] ; then
     case $1 in
@@ -53,7 +56,7 @@ ex ()
       *.zip)       unzip "$1"     ;;
       *.Z)         uncompress "$1";;
       *.7z)        7z x "$1"      ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
+      *)           echo "'$1' cannot be extracted via extract()" ;;
     esac
   else
     echo "'$1' is not a valid file"
@@ -74,14 +77,13 @@ roll ()
   esac
 }
 
-# TODO
-
-# to be explored
-## Finds files by name based on the given search pattern.
-#ff     () { find . -name "*$@*" -exec ls -ldh --color=auto {} +; }
-# function dirsize
-#youtube dl?
-# nice aliases/functions for video, image cropping etc...
-
 # Set prompt
 PS1='[\u@\h \W]\$ '
+
+## TODO and ideas
+#  - find files with search pattern
+#  - output size of direcotry
+#  - youtube video download
+#  - image/sound/video manipulation functions
+
+
