@@ -32,6 +32,12 @@ alias wifi='wicd-curses'
 complete -cf sudo
 complete -cf man
 
+# Set prompt
+PS1='[\u@\h \W]\$ '
+
+# 256 color terminal
+# TODO: there should be condition, tty does not support 256 colors
+export TERM=xterm-256color
 
 ############### Functions ###############
 
@@ -77,8 +83,6 @@ roll ()
   esac
 }
 
-# Set prompt
-PS1='[\u@\h \W]\$ '
 
 ## TODO and ideas
 #  - find files with search pattern
