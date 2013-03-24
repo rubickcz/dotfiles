@@ -1,44 +1,45 @@
 "Use Vi Improved
-:set nocompatible
+set nocompatible
 
 "Make backspace behave right in INSERT mode
-:set backspace=indent,eol,start
+set backspace=indent,eol,start
 
 "Line numbers
-:set number
+set number
 
 "Cursor position in right bottom corner
-:set ruler
+set ruler
 
 "Ignore case when searching
-:set ignorecase
+set ignorecase
 
 "Highlight matches
-:set hlsearch
+set hlsearch
 
 "Incremental search
-:set incsearch
+set incsearch
 
 "Inherit indent from previous line
-:set autoindent
+set autoindent
 
 "History setting
-:set history=50
+set history=50
 
 "Show commands
-:set showcmd
+set showcmd
 
 "Show which mode I am in
-:set showmode
+set showmode
 "
 "Highlight syntax
-set t_Co=256
-syntax on
-colorscheme jellybeans 
+if (&term =~ "-256color")
+  set t_Co=256   
+  syntax on
+  colorscheme jellybeans 
+endif
 
 "Word wrap
 map Q gq
 
 "Filetype plugin
 filetype plugin indent on
-
