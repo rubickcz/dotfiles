@@ -69,25 +69,8 @@ extract ()
   fi
 }
 
-## roll - archive wrapper
-## usage: roll <foo.tar.gz> ./foo ./bar
-roll ()
-{
-  FILE=$1
-  case $FILE in
-    *.tar.bz2) shift && tar cjf "$FILE" "$*" ;;
-    *.tar.gz) shift && tar czf "$FILE" "$*" ;;
-    *.tgz) shift && tar czf "$FILE" "$*" ;;
-    *.zip) shift && zip "$FILE" "$*" ;;
-    *.rar) shift && rar "$FILE" "$*" ;;
-  esac
-}
-
-
 ## TODO and ideas
 #  - find files with search pattern
 #  - output size of direcotry
 #  - youtube video download
 #  - image/sound/video manipulation functions
-
-
