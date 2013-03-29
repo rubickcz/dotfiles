@@ -1,45 +1,38 @@
-"Use Vi Improved
-set nocompatible
+set nocompatible "Use Vi Improved
+set number "Line numbers
+set ruler "Cursor position in right bottom corner
+set ignorecase "Ignore case when searching
+set hlsearch "Highlight matches
+set incsearch "Incremental search
+set autoindent "Inherit indent from previous line
+set history=50 "History setting
+set showcmd "Show commands
+set showmode "Show which mode I am in
 
-"Make backspace behave right in INSERT mode
-set backspace=indent,eol,start
-
-"Line numbers
-set number
-
-"Cursor position in right bottom corner
-set ruler
-
-"Ignore case when searching
-set ignorecase
-
-"Highlight matches
-set hlsearch
-
-"Incremental search
-set incsearch
-
-"Inherit indent from previous line
-set autoindent
-
-"History setting
-set history=50
-
-"Show commands
-set showcmd
-
-"Show which mode I am in
-set showmode
-"
 "Highlight syntax
 if (&term =~ "-256color")
   set t_Co=256   
-  syntax on
-  colorscheme jellybeans 
 endif
 
-"Word wrap
-map Q gq
+syntax on
+colorscheme my-jellybeans 
 
-"Filetype plugin
-filetype plugin indent on
+" Disable cursor and other keys not needed
+" This is mainly for learning purpose, to start
+" thinking in Vim way.s
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+map <Insert> <nop>
+map <Del> <nop>
+map <Home> <nop>
+map <End> <nop>
+map <PageUp> <nop>
+map <PageDown> <nop>
