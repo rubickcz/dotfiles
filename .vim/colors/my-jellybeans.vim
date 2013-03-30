@@ -14,3 +14,4 @@ runtime colors/jellybeans.vim
 let g:colors_name = "my-jellybeans"
 
 hi Statement cterm=Bold
+hi Normal ctermfg=white

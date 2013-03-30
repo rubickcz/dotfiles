@@ -27,6 +27,7 @@ alias myip='wget -q -O - http://wtfismyip.com/text'
 alias pacup='pacman -Syu'
 alias cd..='cd ..'
 alias wifi='wicd-curses'
+alias colors='xfce4-terminal --color-table'
 
 # auto complete sudo
 complete -cf sudo

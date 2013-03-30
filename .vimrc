@@ -8,6 +8,7 @@ set autoindent "Inherit indent from previous line
 set history=50 "History setting
 set showcmd "Show commands
 set showmode "Show which mode I am in
+set mouse=a "Enable mouse
 
 "Highlight syntax
 if (&term =~ "-256color")
