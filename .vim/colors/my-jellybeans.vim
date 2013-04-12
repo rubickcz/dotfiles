@@ -15,3 +15,6 @@ let g:colors_name = "my-jellybeans"
 
 hi Statement cterm=Bold
 hi Normal ctermfg=white
+hi StatusLine ctermbg=240 ctermfg=white
+hi StatusLineNC ctermbg=235 ctermfg=250
+hi Search ctermbg=236 ctermfg=220 cterm=Bold

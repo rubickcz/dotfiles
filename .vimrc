@@ -9,6 +9,12 @@ set history=50 "History setting
 set showcmd "Show commands
 set showmode "Show which mode I am in
 set mouse=a "Enable mouse
+set wildmenu "Autocomplete menu
+
+"Programming TODO: look on these more!
+set expandtab
+set tabstop=4
+set shiftwidth=4
 
 "Highlight syntax
 if (&term =~ "-256color")
