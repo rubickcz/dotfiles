@@ -3,6 +3,7 @@
 !.gitignore
 !.bashrc
 !.bash_profile
+!.xinitrc
 !.vimrc
 !.vim
 .vim/.netrwhist

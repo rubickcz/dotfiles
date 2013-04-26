@@ -8,5 +8,5 @@
 # Autostart Xfce when logging from tty1
 
 if [ "$(tty)" = "/dev/tty1" ] ; then
-  startxfce4
+  startx
 fi
