@@ -6,7 +6,8 @@
 [[ $- != *i* ]] && return
 
 # Set path for local scripts and programs (if exists)
-[ -d ~/scripts ] && PATH=$PATH:$HOME/scripts
+[ -d ~/bin ] && PATH=$PATH:$HOME/bin
+[ -d ~/bin/scripts ] && PATH=$PATH:$HOME/bin/scripts
 export PATH
 
 # History settings

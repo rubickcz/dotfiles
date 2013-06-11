@@ -15,4 +15,9 @@ fi
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
-exec startxfce4
+
+# Allow keyboard layout change (change with alt-shift)
+# setxkbmap -layout cz,us -option grp:alt_shift_toggle &
+
+# Launch i3
+exec i3
