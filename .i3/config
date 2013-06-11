@@ -156,6 +156,9 @@ bar {
 # Custom bindings
 bindsym $mod+b exec chromium
 bindsym $mod+Mod1+l exec i3lock -c 000000
+bindsym XF86AudioLowerVolume exec amixer sset Master 2%-
+bindsym XF86AudioRaiseVolume exec amixer sset Master 2%+
+bindsym XF86AudioMute exec amixer sset Master toggle 
 
 # Assignments
 assign [class="Chromium"] 2:web
