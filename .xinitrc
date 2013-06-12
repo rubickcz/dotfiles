@@ -21,3 +21,4 @@ fi
 
 # Launch i3
 exec i3
+# exec gnome-session-cinnamon

@@ -19,7 +19,7 @@ set $mod Mod4
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
-font pango:Terminus 8 
+font pango:Dina 8 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -154,7 +154,7 @@ bar {
 # -----------------------------------------
 
 # Custom bindings
-bindsym $mod+b exec chromium
+bindsym $mod+b exec chromium; workspace 2:web
 bindsym $mod+Mod1+l exec i3lock -c 000000
 bindsym XF86AudioLowerVolume exec amixer sset Master 2%-
 bindsym XF86AudioRaiseVolume exec amixer sset Master 2%+
@@ -166,10 +166,11 @@ assign [class="Pidgin"] 4:im
 assign [class="Vlc"] 3:media
 
 # Autostart
+exec pidgin
 exec wicd-client -t
-exec feh --bg-scale home/ondra/media/images/377.jpg
+exec feh --bg-fill /home/ondra/media/images/377.jpg
 exec setxkbmap -layout us,cz -option grp:alt_shift_toggle
-exec xxkb
+exec_always xxkb
 
 # Other
 focus_follows_mouse no
