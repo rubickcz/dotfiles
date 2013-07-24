@@ -24,9 +24,15 @@ endif
 syntax on
 colorscheme my-jellybeans 
 
+" Pathogen plugin
+execute pathogen#infect()
+
+" For easier work with clipboard register
+map <F12> "+
+
 " Disable cursor and other keys not needed
 " This is mainly for learning purpose, to start
-" thinking in Vim way.s
+" thinking in Vim way.
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
