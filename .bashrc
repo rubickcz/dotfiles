@@ -29,7 +29,8 @@ alias pacup='pacman -Syu'
 alias cd..='cd ..'
 alias wifi='wicd-curses'
 alias colors='xfce4-terminal --color-table'
-alias i3config='vim .i3/config'
+alias i3config='vim ~/.i3/config'
+alias webserver-here='python -m http.server 8000'
 
 # auto complete sudo
 complete -cf sudo
