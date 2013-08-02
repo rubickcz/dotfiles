@@ -11,6 +11,10 @@ set showmode "Show which mode I am in
 set mouse=a "Enable mouse
 set wildmenu "Autocomplete menu
 
+" move through screen lines
+:map j gj
+:map k gk
+
 "Programming TODO: look on these more!
 set expandtab
 set tabstop=4
