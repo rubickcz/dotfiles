@@ -31,6 +31,7 @@ alias wifi='wicd-curses'
 alias colors='xfce4-terminal --color-table'
 alias i3config='vim ~/.i3/config'
 alias webserver-here='python -m http.server 8000'
+alias top10='find . -type f -exec du -h {} + | sort -rh | head -n 10'
 
 # auto complete sudo
 complete -cf sudo
