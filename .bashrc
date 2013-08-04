@@ -15,6 +15,13 @@ export HISTCONTROL=ignoredups	# Don't store repeat commands
 export HISTSIZE=10000		# Store 10000 commands from current session
 export HISTFILESIZE=10000	# Keep a record of 10000 commands
 
+# 256 color terminal
+# TODO: there should be condition, tty does not support 256 colors
+export TERM=xterm-256color
+
+export EDITOR=vim
+export PAGER=less
+
 # ALIASES
 alias ls='ls -h --color=auto'
 alias ll='ls -l'
@@ -32,6 +39,7 @@ alias colors='xfce4-terminal --color-table'
 alias i3config='vim ~/.i3/config'
 alias webserver-here='python -m http.server 8000'
 alias top10='find . -type f -exec du -h {} + | sort -rh | head -n 10'
+alias feh='feh -F -d -S filename'
 
 # auto complete sudo
 complete -cf sudo
@@ -39,10 +47,6 @@ complete -cf man
 
 # Set prompt
 PS1='[\u@\h \W]\$ '
-
-# 256 color terminal
-# TODO: there should be condition, tty does not support 256 colors
-export TERM=xterm-256color
 
 ############### Functions ###############
 
