@@ -19,6 +19,9 @@ fi
 # Allow keyboard layout change (change with alt-shift)
 # setxkbmap -layout cz,us -option grp:alt_shift_toggle &
 
+# Dirty hack to get automount notifications
+(killall devmon; sleep 5; devmon --exec-on-drive "notify-send \"Device %f %l has been automounted\"" --exec-on-unmount "notify-send \"Device %f %l has been unmounted\"" --exec-on-remove  "notify-send \"Device %f has been REMOVED\"") &
+
 # Launch i3
 exec i3
 # exec gnome-session-cinnamon
