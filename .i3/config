@@ -165,6 +165,7 @@ bindsym XF86AudioMute exec amixer sset Master toggle
 bindsym $mod+0 workspace back_and_forth
 bindsym $mod+n workspace next
 bindsym $mod+p workspace prev
+bindsym $mod+u exec devmon -r
 # I am used to this from dwm
 bindsym $mod+Shift+c kill
 
@@ -175,13 +176,12 @@ assign [class="Vlc"] 4:media
 assign [class="Evince"] 5:pdf
 
 # Autostart
-exec pidgin
+exec sleep 20; pidgin
 exec wicd-client -t
-exec feh --bg-fill /home/ondra/media/images/cham.jpg
+exec feh --bg-fill /home/ondra/media/wallpapers/cham.jpg
 exec setxkbmap -layout us,cz -option grp:alt_shift_toggle
 exec_always xxkb
-# automount
-exec devmon
+exec urxvtd
 
 # Other
 focus_follows_mouse no
