@@ -40,6 +40,9 @@ alias webserver-here='python -m http.server 8000'
 alias top10='find . -type f -exec du -h {} + | sort -rh | head -n 10'
 alias feh='feh -F -d -S filename'
 alias web='cd projects/website'
+alias top10pkg='pacman -Qi|awk '"'"'/^Installed Size/{print int($4), name} /^Name/{name=$3}'"'"'|sort -nr | head -n 10'
+alias gotomacan='cd ~/skola/svp/macan'
+alias gotomacanbuild='cd ~/skola/svp/macan/build/linux'
 
 # auto complete sudo
 complete -cf sudo
