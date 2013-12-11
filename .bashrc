@@ -41,8 +41,13 @@ alias top10='find . -type f -exec du -h {} + | sort -rh | head -n 10'
 alias feh='feh -F -d -S filename'
 alias web='cd projects/website'
 alias top10pkg='pacman -Qi|awk '"'"'/^Installed Size/{print int($4), name} /^Name/{name=$3}'"'"'|sort -nr | head -n 10'
+alias pacman-disowned-dirs="comm -23 <(sudo find / \( -path '/dev' -o -path '/sys' -o -path '/run' -o -path '/tmp' -o -path '/mnt' -o -path '/srv' -o -path '/proc' -o -path '/boot' -o -path '/home' -o -path '/root' -o -path '/media' -o -path '/var/lib/pacman' -o -path '/var/cache/pacman' \) -prune -o -type d -print | sed 's/\([^/]\)$/\1\//' | sort -u) <(pacman -Qlq | sort -u)"
+alias pacman-disowned-files="comm -23 <(sudo find / \( -path '/dev' -o -path '/sys' -o -path '/run' -o -path '/tmp' -o -path '/mnt' -o -path '/srv' -o -path '/proc' -o -path '/boot' -o -path '/home' -o -path '/root' -o -path '/media' -o -path '/var/lib/pacman' -o -path '/var/cache/pacman' \) -prune -o -type f -print | sort -u) <(pacman -Qlq | sort -u)"
+
+# some aliases for my MaCAN project
 alias gotomacan='cd ~/skola/svp/macan'
 alias gotomacanbuild='cd ~/skola/svp/macan/build/linux'
+alias gotomacantest='cd ~/skola/svp/testing/ctu-vw/'
 
 # auto complete sudo
 complete -cf sudo
