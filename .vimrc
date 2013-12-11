@@ -15,12 +15,16 @@ set wildmenu "Autocomplete menu
 :map j gj
 :map k gk
 
-"Programming TODO: look on these more!
+" Programming TODO: look on these more!
 set softtabstop=4
-set expandtab
+"set expandtab
 set tabstop=4
 set shiftwidth=4
 filetype plugin indent on
+map <f5> <esc>:update<cr>:make<cr>
+map cn <esc>:cn<cr>
+map cp <esc>:cp<cr>
+set cmdheight=2
 
 "Highlight syntax
 if (&term =~ "-256color")
