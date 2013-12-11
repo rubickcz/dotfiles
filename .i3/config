@@ -166,8 +166,9 @@ bindsym $mod+0 workspace back_and_forth
 bindsym $mod+n workspace next
 bindsym $mod+p workspace prev
 bindsym $mod+u exec devmon -r
+bindsym $mod+c exec gsimplecal
 # I am used to this from dwm
-bindsym $mod+Shift+c kill
+# bindsym $mod+Shift+c kill
 
 # Assignments
 assign [class="Chromium"] 2:web
@@ -187,3 +188,4 @@ exec urxvtd
 focus_follows_mouse no
 for_window [class="Pidgin"] floating enable
 for_window [class="Chromium"] border none
+for_window [class="Gsimplecal"] border none floating enable move absolute position 1180px 30px
