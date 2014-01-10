@@ -11,13 +11,13 @@ set showmode "Show which mode I am in
 set mouse=a "Enable mouse
 set wildmenu "Autocomplete menu
 
-" move through screen lines
+" move through screen lines instead of real lines
 :map j gj
 :map k gk
 
 " Programming TODO: look on these more!
 set softtabstop=4
-"set expandtab
+set expandtab
 set tabstop=4
 set shiftwidth=4
 filetype plugin indent on
@@ -36,6 +36,8 @@ colorscheme my-jellybeans
 
 " Pathogen plugin
 execute pathogen#infect()
+
+let g:vim_markdown_folding_disabled=1 " markdown folding disable
 
 " For easier work with clipboard register
 map <F12> "+
