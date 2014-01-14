@@ -178,7 +178,7 @@ assign [class="Evince"] 5:pdf
 
 # Autostart
 exec sleep 20; pidgin
-exec wicd-client -t
+exec sleep 5; wicd-client -t
 exec feh --bg-fill /home/ondra/media/wallpapers/arch.jpg
 exec setxkbmap -layout us,cz -option grp:alt_shift_toggle
 exec_always xxkb
