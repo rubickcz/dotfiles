@@ -57,6 +57,10 @@ source /etc/bash_completion.d/password-store
 # Set prompt
 PS1='[\u@\h \W]\$ '
 
+# disable XOFF (terminal freeze by pressing Ctrl-S)
+stty ixany
+stty ixoff -ixon
+
 ############### Functions ###############
 
 ## Backup file
