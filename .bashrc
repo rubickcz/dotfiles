@@ -46,8 +46,8 @@ alias pacman-disowned-files="comm -23 <(sudo find / \( -path '/dev' -o -path '/s
 
 # some aliases for my MaCAN project
 alias gotomacan='cd ~/skola/svp/macan'
-alias gotomacanbuild='cd ~/skola/svp/macan/build/linux'
-alias gotomacantest='cd ~/skola/svp/testing/ctu-vw/'
+alias gotomacand3='cd ~/skola/svp/macan/demos/demo03/test'
+alias gotomacand2='cd ~/skola/svp/macan/demos/demo02/test'
 
 # auto complete sudo
 complete -cf sudo
