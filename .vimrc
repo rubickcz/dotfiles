@@ -56,6 +56,11 @@ ab #e *********************************************/
 ab #i #include
 ab #d #define
 
+" vimdiff commands for resolving Git merge conflicts
+map <leader>2 :diffget 2<CR> :diffupdate<CR>
+map <leader>3 :diffget 3<CR> :diffupdate<CR>
+map <leader>4 :diffget 4<CR> :diffupdate<CR>
+
 " AUTO COMMANDS
 "======================================================================
 " open NERDTree after vim start...
