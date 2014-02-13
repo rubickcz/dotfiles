@@ -70,6 +70,12 @@ autocmd VimEnter * wincmd p
 " close NERDTree if it's the only buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" change status bar color in insert mode 
+if version >= 700
+  au InsertEnter * hi StatusLine ctermbg=22
+  au InsertLeave * hi StatusLine ctermbg=24
+endif
+
 " PLUGIN specific settings
 "======================================================================
 " Pathogen plugin
