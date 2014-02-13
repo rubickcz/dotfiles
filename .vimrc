@@ -36,6 +36,9 @@ colorscheme my-jellybeans
 " recognize filetype for syntax highlight, indetation etc.
 filetype plugin indent on
 
+" Load man plugin
+runtime! ftplugin/man.vim
+
 " Key mappings
 map <f5> <esc>:update<cr>:make<cr>
 map cn <esc>:cn<cr>
