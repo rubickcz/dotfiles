@@ -86,6 +86,8 @@ let g:vim_markdown_folding_disabled=1
 let g:Tlist_GainFocus_On_ToggleOpen=1
 " Show Tags list on the right
 let g:Tlist_Use_Right_Window=1
+" Show tags only for current buffer
+let g:Tlist_Show_One_File = 1
 " Extensions for CtrlP
 let g:ctrlp_extensions = ['tag']
 
@@ -105,4 +107,3 @@ map <Home> <nop>
 map <End> <nop>
 map <PageUp> <nop>
 map <PageDown> <nop>
-
