@@ -1,3 +1,31 @@
+" Vundle setup
+"==========================================================================
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle, required
+Bundle 'gmarik/vundle'
+
+" github plugins
+Bundle 'kien/ctrlp.vim' 
+Bundle 'scrooloose/nerdtree'
+Bundle 'godlygeek/tabular'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'jlanzarotta/bufexplorer'
+
+" vim.org plugins
+Bundle 'a.vim'
+Bundle 'taglist.vim'
+
+" colors
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'rubickcz/my-jellybeans'
+
+
 " General settings
 "==========================================================================
 set nocompatible " Use Vi Improved
@@ -78,8 +106,6 @@ endif
 
 " PLUGIN specific settings
 "======================================================================
-" Pathogen plugin
-execute pathogen#infect()
 " Markdown folding disable
 let g:vim_markdown_folding_disabled=1 
 " Focus Tags List when opened
