@@ -92,6 +92,17 @@ map <leader>2 :diffget 2<CR> :diffupdate<CR>
 map <leader>3 :diffget 3<CR> :diffupdate<CR>
 map <leader>4 :diffget 4<CR> :diffupdate<CR>
 
+" add include guards to new header files
+function! s:insert_gates()
+  let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+  execute "normal! i#ifndef " . gatename
+  execute "normal! o#define " . gatename . " "
+  execute "normal! Go#endif /* " . gatename . " */"
+  execute "normal! O"
+  normal! kk
+endfunction
+autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
+
 " AUTO COMMANDS
 "======================================================================
 " open NERDTree after vim start...
