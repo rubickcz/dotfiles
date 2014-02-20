@@ -71,12 +71,15 @@ runtime! ftplugin/man.vim
 map <f5> <esc>:update<cr>:make<cr>
 map cn <esc>:cn<cr>
 map cp <esc>:cp<cr>
+
 map <F11> :NERDTreeToggle<CR>
 map <F12> :TlistToggle<CR>
-map <C-k> :BufExplorer<CR>
+
 map <C-s> :sh<CR>
 map <C-p> :CtrlP<CR>
-map <C-a> :A<CR>
+
+map <Leader>a :A<CR>
+map <Leader>b :BufExplorer<CR>
 
 " abbreviations (type in insert mode and press space)
 ab #b /*********************************************
@@ -116,6 +119,10 @@ let g:Tlist_Use_Right_Window=1
 let g:Tlist_Show_One_File = 1
 " Extensions for CtrlP
 let g:ctrlp_extensions = ['tag']
+
+" disable leader key bindings of buffer explorer
+silent! nunmap <leader>bv
+silent! nunmap <leader>bs
 
 " DISABLE KEYS to force not use them 
 "=======================================================================
