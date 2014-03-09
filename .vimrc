@@ -16,6 +16,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'jlanzarotta/bufexplorer'
+Bundle 'Valloric/YouCompleteMe'
+" Bundle 'bling/vim-airline'
+" Bundle 'Rip-Rip/clang_complete'
 
 " vim.org plugins
 Bundle 'a.vim'
@@ -27,19 +30,20 @@ Bundle 'rubickcz/my-jellybeans'
 
 
 " General settings
-"==========================================================================
-set nocompatible " Use Vi Improved
-set number       " Show line numbers
-set ruler        " Show cursor position in right bottom corner
-set ignorecase   " Ignore case when searching
-set hlsearch     " Highlight search matches
-set incsearch    " Incremental search (search as you type)
-set history=1000 " Command history size
-set showcmd      " Show commands typed in normal mode in right bottom corner
-set showmode     " Show which mode I am in
-set mouse=a      " Enable mouse
-set wildmenu     " Command line autocomplete menu (when TAB is pressed)
-set path+=**     " Allow gf search in current dir recursively
+" ==========================================================================
+set nocompatible               " Use Vi Improved
+set number                     " Show line numbers
+set ruler                      " Show cursor position in right bottom corner
+set ignorecase                 " Ignore case when searching
+set hlsearch                   " Highlight search matches
+set incsearch                  " Incremental search (search as you type)
+set history=1000               " Command history size
+set showcmd                    " Show commands typed in normal mode in right bottom corner
+set showmode                   " Show which mode I am in
+set mouse=a                    " Enable mouse
+set wildmenu                   " Command line autocomplete menu (when TAB is pressed)
+set wildmode=longest:full,full " first find longest common string
+set path+=**                   " Allow gf search in current dir recursively
 
 " move through screen lines instead of real lines
 map j gj
@@ -77,20 +81,22 @@ map <F12> :TlistToggle<CR>
 
 map <C-s> :sh<CR>
 map <C-p> :CtrlP<CR>
+map <C-k> :BufExplorer<CR>
 
 map <Leader>a :A<CR>
-map <Leader>b :BufExplorer<CR>
+" refresh ctags
+map <Leader>t :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" vimdiff commands for resolving Git merge conflicts
+map <leader>2 :diffget 2<CR> :diffupdate<CR>
+map <leader>3 :diffget 3<CR> :diffupdate<CR>
+map <leader>4 :diffget 4<CR> :diffupdate<CR>
 
 " abbreviations (type in insert mode and press space)
 ab #b /*********************************************
 ab #e *********************************************/
 ab #i #include
 ab #d #define
-
-" vimdiff commands for resolving Git merge conflicts
-map <leader>2 :diffget 2<CR> :diffupdate<CR>
-map <leader>3 :diffget 3<CR> :diffupdate<CR>
-map <leader>4 :diffget 4<CR> :diffupdate<CR>
 
 " add include guards to new header files
 function! s:insert_gates()
@@ -130,6 +136,16 @@ let g:Tlist_Use_Right_Window=1
 let g:Tlist_Show_One_File = 1
 " Extensions for CtrlP
 let g:ctrlp_extensions = ['tag']
+
+"let g:ycm_min_num_of_chars_for_completion = 99
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+"let g:ycm_enable_diagnostic_signs = 0
+"let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_confirm_extra_conf = 0
+"let g:ycm_show_diagnostics_ui = 0
 
 " disable leader key bindings of buffer explorer
 silent! nunmap <leader>bv
