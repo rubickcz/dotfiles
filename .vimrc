@@ -14,9 +14,9 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim' 
 Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
-Bundle 'plasticboy/vim-markdown'
+"Bundle 'plasticboy/vim-markdown'
 Bundle 'jlanzarotta/bufexplorer'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 " Bundle 'bling/vim-airline'
 " Bundle 'Rip-Rip/clang_complete'
 
@@ -27,6 +27,8 @@ Bundle 'taglist.vim'
 " colors
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'rubickcz/my-jellybeans'
+
+" TODO: Make Ctrl-L redraw screen and nohlsearch
 
 
 " General settings

@@ -6,7 +6,7 @@ XXkb.mainwindow.xpm.1: us.xpm
 XXkb.mainwindow.xpm.2: cz.xpm
 XXkb.controls.add_when_start: yes
 XXkb.controls.add_when_create: yes
-XXkb.controls.add_when_change: no
+XXkb.controls.add_when_change: no 
 XXkb.group.base: 1
 XXkb.group.alt: 2
 XXkb.mainwindow.enable:  yes
