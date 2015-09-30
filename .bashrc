@@ -12,8 +12,8 @@ export PATH
 
 # History settings
 export HISTCONTROL=ignoredups	# Don't store repeat commands
-export HISTSIZE=10000		# Store 10000 commands from current session
-export HISTFILESIZE=10000	# Keep a record of 10000 commands
+export HISTSIZE=10000			# Store 10000 commands from current session
+export HISTFILESIZE=10000		# Keep a record of 10000 commands
 
 # 256 color terminal
 # TODO: there should be condition, tty does not support 256 colors
@@ -22,33 +22,36 @@ export TERM=xterm-256color
 export EDITOR=vim
 export PAGER=less
 
-# ALIASES
+###################################################
+# ALIASES                                         #
+###################################################
+
 alias ls='ls -h --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='la -al'
 alias grep='grep --color=auto'
-alias dotfiles='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias pingg='ping 8.8.8.8'
 alias pacman='sudo pacman'
+# show current public IP address
 alias myip='wget -q -O - http://wtfismyip.com/text'
 alias pacup='pacman -Syu'
 alias cd..='cd ..'
-alias wifi='wicd-curses'
 alias i3config='vim ~/.i3/config'
 alias vimrc='vim ~/.vimrc'
 alias webserver-here='python -m http.server 8000'
+# show top 10 largest files in the current dir
 alias top10='find . -type f -exec du -h {} + | sort -rh | head -n 10'
 alias feh='feh -F -d -S filename'
 alias web='cd projects/website'
+# top 10 largest installed packages
 alias top10pkg='pacman -Qi|awk '"'"'/^Installed Size/{print int($4), name} /^Name/{name=$3}'"'"'|sort -nr | head -n 10'
+# show dirs not owned by any package
 alias pacman-disowned-dirs="comm -23 <(sudo find / \( -path '/dev' -o -path '/sys' -o -path '/run' -o -path '/tmp' -o -path '/mnt' -o -path '/srv' -o -path '/proc' -o -path '/boot' -o -path '/home' -o -path '/root' -o -path '/media' -o -path '/var/lib/pacman' -o -path '/var/cache/pacman' \) -prune -o -type d -print | sed 's/\([^/]\)$/\1\//' | sort -u) <(pacman -Qlq | sort -u)"
+# show files not owned by any package
 alias pacman-disowned-files="comm -23 <(sudo find / \( -path '/dev' -o -path '/sys' -o -path '/run' -o -path '/tmp' -o -path '/mnt' -o -path '/srv' -o -path '/proc' -o -path '/boot' -o -path '/home' -o -path '/root' -o -path '/media' -o -path '/var/lib/pacman' -o -path '/var/cache/pacman' \) -prune -o -type f -print | sort -u) <(pacman -Qlq | sort -u)"
 
-# some aliases for my MaCAN project
-alias gotomacan='cd ~/skola/svp/macan'
-alias gotomacand3='cd ~/skola/svp/macan/demos/demo03/test'
-alias gotomacand2='cd ~/skola/svp/macan/demos/demo02/test'
+###################################################
 
 # auto complete sudo
 complete -cf sudo
@@ -91,24 +94,6 @@ extract ()
     echo "'$1' is not a valid file"
   fi
 }
-streaming() {
-     INRES="1440x900" # input resolution
-     OUTRES="1280x720" # output resolution
-     FPS="15" # target FPS
-     GOP="30" # i-frame interval, should be double of FPS, 
-     GOPMIN="15" # min i-frame interval, should be equal to fps, 
-     THREADS="2" # max 6
-     CBR="200k" # constant bitrate (should be between 1000k - 3000k)
-     QUALITY="ultrafast"  # one of the many FFMPEG preset
-     AUDIO_RATE="44100"
-     STREAM_KEY="$1" # use the terminal command Streaming streamkeyhere to stream your video to twitch or justin
-     SERVER="live-fra" # twitch server in frankfurt, see http://bashtech.net/twitch/ingest.php for list
-     
-     ffmpeg -f x11grab -s "$INRES" -r "$FPS" -i :0.0 -f alsa -i pulse -f flv -ac 2 -ar $AUDIO_RATE \
-       -vcodec libx264 -g $GOP -keyint_min $GOPMIN -b:v $CBR -minrate $CBR -maxrate $CBR -pix_fmt yuv420p\
-       -s $OUTRES -preset $QUALITY -tune film -acodec libmp3lame -threads $THREADS -strict normal \
-       -bufsize $CBR "rtmp://$SERVER.twitch.tv/app/$STREAM_KEY"
- }
 
 ## TODO and ideas
 #  - find files with search pattern
