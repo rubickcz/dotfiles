@@ -15,7 +15,7 @@
 # Variables
 
 BACKUP_DIR="$PWD/backup/`date "+%Y-%m-%d_%H%M%S"`"             # old dotfiles backup directory
-FILES=".bash_profile .bashrc .i3"    # list of files/folders to symlink in homedir
+FILES=".bash_profile .bashrc .i3 .i3status.conf .Xdefaults .config/mc"    # list of files/folders to symlink in homedir
 
 # Create the backup dirctory
 echo ":: Creating backup directory: $BACKUP_DIR/"
@@ -34,7 +34,7 @@ for FILE in $FILES; do
 
 	# create symlink
 	if [ -e "$PWD/$FILE" ]; then
-		ln -s "$PWD/$FILE" "$HOME"
+		ln -s "$PWD/$FILE" "$HOME/`dirname $FILE`"
 	else
 		echo "ERROR: Cannot create a symlink for $FILE (file not found)."	
 	fi
