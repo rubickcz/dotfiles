@@ -1,0 +1,4 @@
+ENTRY "Mounted media (/run/media/ondra)" URL "/run/media/ondra"
+ENTRY "Website (/home/ondra/repos/website)" URL "/home/ondra/repos/website"
+ENTRY "Downloads (/home/ondra/downloads)" URL "/home/ondra/downloads"
+ENTRY "Hanacka mozeka FTP" URL "/ftp://w51598@51598.w98.wedos.net/"
