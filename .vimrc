@@ -1,38 +1,43 @@
+"==========================================================================
 " Vundle setup
 "==========================================================================
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
-" github plugins
-Bundle 'kien/ctrlp.vim' 
-Bundle 'scrooloose/nerdtree'
-Bundle 'godlygeek/tabular'
-"Bundle 'plasticboy/vim-markdown'
-Bundle 'jlanzarotta/bufexplorer'
-" Bundle 'Valloric/YouCompleteMe'
-" Bundle 'bling/vim-airline'
-" Bundle 'Rip-Rip/clang_complete'
+" --> GITHUB PLUGINS 
+Plugin 'kien/ctrlp.vim' 
+Plugin 'scrooloose/nerdtree'
+Plugin 'jlanzarotta/bufexplorer'
+"Plugin 'bling/vim-airline'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'godlygeek/tabular'
+"Plugin 'plasticboy/vim-markdown'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'bling/vim-airline'
+"Plugin 'Rip-Rip/clang_complete'
 
-" vim.org plugins
-Bundle 'a.vim'
-Bundle 'taglist.vim'
+" --> VIM.ORG PLUGINS
+Plugin 'a.vim'
+Plugin 'taglist.vim'
 
-" colors
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'rubickcz/my-jellybeans'
+" --> COLORS
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'rubickcz/my-jellybeans'
 
-" TODO: Make Ctrl-L redraw screen and nohlsearch
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-
+"===========================================================================
 " General settings
-" ==========================================================================
+"===========================================================================
 set nocompatible               " Use Vi Improved
 set number                     " Show line numbers
 set ruler                      " Show cursor position in right bottom corner
@@ -46,46 +51,40 @@ set mouse=a                    " Enable mouse
 set wildmenu                   " Command line autocomplete menu (when TAB is pressed)
 set wildmode=longest:full,full " first find longest common string
 set path+=**                   " Allow gf search in current dir recursively
+set cmdheight=2				   " No need to press Enter twice after some commands
 
-" move through screen lines instead of real lines
-map j gj
-map k gk
-
-" Programming settings
-"==========================================================================
-set softtabstop=4 " Width of tab typed in insert mode
-set tabstop=4     " Width of tab marks in file
-set shiftwidth=4  " Width of shift (when shifting lines, blocks...)
-set cmdheight=2   " No need to press Enter twice after some commands
-
-" set 256 colors if terminal supports it
-if (&term =~ "-256color")
-  set t_Co=256   
-endif
+set softtabstop=4              " Width of tab typed in insert mode
+set tabstop=4                  " Width of tab marks in file
+set shiftwidth=4               " Width of shift (when shifting lines, blocks...)
 
 " enable syntax highlighting and set color scheme
 syntax on                 
 colorscheme my-jellybeans 
 
-" recognize filetype for syntax highlight, indetation etc.
-filetype plugin indent on
-
 " Load man plugin
 runtime! ftplugin/man.vim
 
+"=========================================================================
 " Key mappings
+"=========================================================================
+
+" Save the current file and make
 map <f5> <esc>:update<cr>:make<cr>
+
+" Next and previous compile error
 map cn <esc>:cn<cr>
 map cp <esc>:cp<cr>
 
 map <F11> :NERDTreeToggle<CR>
 map <F12> :TlistToggle<CR>
 
+" open shell (Ctrl-D to go back to Vim)
 map <C-s> :sh<CR>
-map <C-p> :CtrlP<CR>
-map <C-k> :BufExplorer<CR>
 
+map <C-p> :CtrlP<CR>
+map <C-k> :ToggleBufExplorer<CR>
 map <Leader>a :A<CR>
+
 " refresh ctags
 map <Leader>t :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
@@ -94,11 +93,25 @@ map <leader>2 :diffget 2<CR> :diffupdate<CR>
 map <leader>3 :diffget 3<CR> :diffupdate<CR>
 map <leader>4 :diffget 4<CR> :diffupdate<CR>
 
-" abbreviations (type in insert mode and press space)
+" remove search highlight
+map <C-l> :nohlsearch<CR>
+
+" move through screen lines instead of real lines
+map j gj
+map k gk
+
+"=========================================================================
+" Abbreviations (type in insert mode and press space)
+"=========================================================================
+
 ab #b /*********************************************
 ab #e *********************************************/
 ab #i #include
 ab #d #define
+
+"=========================================================================
+" Functions
+"=========================================================================
 
 " add include guards to new header files
 function! s:insert_gates()
@@ -111,14 +124,20 @@ function! s:insert_gates()
 endfunction
 autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
 
+"=========================================================================
 " AUTO COMMANDS
 "======================================================================
+
 " open NERDTree after vim start...
 autocmd VimEnter * NERDTree
-" ...and switch to file window
+" ...and switch to its window
 autocmd VimEnter * wincmd p
 " close NERDTree if it's the only buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+"=========================================================================
+" Other
+"======================================================================
 
 " change status bar color in insert mode 
 if version >= 700
@@ -126,8 +145,26 @@ if version >= 700
   au InsertLeave * hi StatusLine ctermbg=24
 endif
 
+" Disable arrow keys to learn the Vim way
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+map <Insert> <nop>
+map <Del> <nop>
+map <Home> <nop>
+map <End> <nop>
+map <PageUp> <nop>
+map <PageDown> <nop>
+
+"=========================================================================
 " PLUGIN specific settings
 "======================================================================
+
 " Markdown folding disable
 let g:vim_markdown_folding_disabled=1 
 " Focus Tags List when opened
@@ -152,20 +189,3 @@ let g:ycm_confirm_extra_conf = 0
 " disable leader key bindings of buffer explorer
 silent! nunmap <leader>bv
 silent! nunmap <leader>bs
-
-" DISABLE KEYS to force not use them 
-"=======================================================================
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-map <Insert> <nop>
-map <Del> <nop>
-map <Home> <nop>
-map <End> <nop>
-map <PageUp> <nop>
-map <PageDown> <nop>
