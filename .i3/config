@@ -187,8 +187,7 @@ exec viber
 #exec strace xxkb 2> /home/ondra/log.txt
 exec fbxkb
 # exec sleep 5; wicd-client -t
-# exec feh --bg-fill /home/ondra/media/wallpapers/flowers.jpg
-exec /home/ondra/.fehbg
+exec feh --bg-fill '/home/ondra/media/wallpapers/flowers.jpg' 
 exec setxkbmap -layout us,cz -option grp:alt_shift_toggle
 exec urxvtd
 exec numlockx
