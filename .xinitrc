@@ -20,7 +20,7 @@ fi
 # setxkbmap -layout cz,us -option grp:alt_shift_toggle &
 
 # Dirty hack to get automount notifications
-(killall devmon; sleep 5; devmon --exec-on-drive "notify-send -t 5000 \"Device %f %l has been automounted\"" --exec-on-unmount "notify-send -t 5000 \"Device %f %l has been unmounted\"" --exec-on-remove  "notify-send -t 5000 \"Device %f has been REMOVED\"") &
+# (killall devmon; sleep 5; devmon --exec-on-drive "notify-send -t 5000 \"Device %f %l has been automounted\"" --exec-on-unmount "notify-send -t 5000 \"Device %f %l has been unmounted\"" --exec-on-remove  "notify-send -t 5000 \"Device %f has been REMOVED\"") &
 
 # Launch i3
 exec i3
