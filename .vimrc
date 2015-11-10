@@ -15,6 +15,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim' 
 Plugin 'scrooloose/nerdtree'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'sjl/gundo.vim'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-sensible'
 "Plugin 'bling/vim-airline'
 "Plugin 'tpope/vim-fugitive'
 "Plugin 'godlygeek/tabular'
@@ -52,13 +56,27 @@ set wildmenu                   " Command line autocomplete menu (when TAB is pre
 set wildmode=longest:full,full " first find longest common string
 set path+=**                   " Allow gf search in current dir recursively
 set cmdheight=2				   " No need to press Enter twice after some commands
+set autoindent			       " Auto indent next line according to previous line	
+set backspace=indent,eol,start " Backspace setting
+
+set timeout
+set timeoutlen=400
+set ttimeout
+set ttimeoutlen=400
+set laststatus=2
+set scrolloff=1
+set sidescrolloff=5
+set display+=lastline
+set autoread
 
 set softtabstop=4              " Width of tab typed in insert mode
 set tabstop=4                  " Width of tab marks in file
 set shiftwidth=4               " Width of shift (when shifting lines, blocks...)
+set smarttab				   " User smart tab
+set expandtab
 
 " enable syntax highlighting and set color scheme
-syntax on                 
+syntax enable 
 colorscheme my-jellybeans 
 
 " Load man plugin
@@ -75,6 +93,7 @@ map <f5> <esc>:update<cr>:make<cr>
 map cn <esc>:cn<cr>
 map cp <esc>:cp<cr>
 
+map <F10> :GundoToggle<CR>
 map <F11> :NERDTreeToggle<CR>
 map <F12> :TlistToggle<CR>
 
@@ -95,6 +114,8 @@ map <leader>4 :diffget 4<CR> :diffupdate<CR>
 
 " remove search highlight
 map <C-l> :nohlsearch<CR>
+imap <C-Space> <C-x><C-o>
+imap <C-@> <C-Space>
 
 " move through screen lines instead of real lines
 map j gj
@@ -165,6 +186,8 @@ map <PageDown> <nop>
 " PLUGIN specific settings
 "======================================================================
 
+let g:gundo_right = 1
+
 " Markdown folding disable
 let g:vim_markdown_folding_disabled=1 
 " Focus Tags List when opened
@@ -189,3 +212,5 @@ let g:ycm_confirm_extra_conf = 0
 " disable leader key bindings of buffer explorer
 silent! nunmap <leader>bv
 silent! nunmap <leader>bs
+
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
