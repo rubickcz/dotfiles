@@ -90,6 +90,8 @@ editor_filesize_threshold=64M
 editor_drop_selection_on_copy=1
 editor_stop_format_chars=-+*\\,.;:&>
 
+editor_state_full_filename=0
+
 [Layout]
 message_visible=1
 keybar_visible=1
