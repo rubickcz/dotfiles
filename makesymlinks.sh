@@ -38,8 +38,8 @@ for FILE in $FILES; do
         # check if symlink is not already created
         if ! [ -h "$HOME/$FILE" ]; then
 
+            # if the config file already exists, backup it
             if [ -e "$HOME/$FILE" ]; then
-                # copy the existing dotfile to the backup directory if it's not a symlink
                 mv "$HOME/$FILE" "$BACKUP_DIR"
             fi
 
