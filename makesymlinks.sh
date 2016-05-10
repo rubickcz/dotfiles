@@ -17,7 +17,7 @@
 # old dotfiles backup directory
 BACKUP_DIR="$PWD/backup/`date "+%Y-%m-%d_%H%M%S"`"
 # list of files/folders to symlink in homedir
-FILES=".bash_profile .bashrc .i3 .i3status.conf .Xdefaults .config/mc .config/dunst .local/share/applications/mimeapps.list .vimrc .xxkbrc .xxkb"
+FILES=".bash_profile .bashrc .i3 .i3status.conf .Xdefaults .config/mc .config/dunst .local/share/applications/mimeapps.list .vimrc .xxkbrc .xxkb .config/fontconfig/fonts.conf"
 
 #########################################################################################
 
