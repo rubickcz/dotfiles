@@ -35,7 +35,7 @@ alias pingg='ping 8.8.8.8'
 alias pacman='sudo pacman'
 # show current public IP address
 alias myip='wget -q -O - http://wtfismyip.com/text'
-alias pacup='pacman -Syu'
+alias pacup='pacman -Syu; aurget -Syu'
 alias cd..='cd ..'
 alias i3config='vim ~/.i3/config'
 alias vimrc='vim ~/.vimrc'
