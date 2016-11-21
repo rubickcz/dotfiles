@@ -5,7 +5,7 @@ A collection of my config files (aka dotfiles) from Arch Linux.
 | application / program  | description | config file(s) |
 | ------------- | ------------- | ------------- |
 | [dunst](https://www.archlinux.org/packages/community/i686/dunst/) | notification daemon | `.config/dunst/dunstrc` |
-| [freetype2](https://www.archlinux.org/packages/extra/x86_64/freetype2/)<sup>1</sup> | font rendering library | `.config/fontconfig` |
+| [freetype2](https://www.archlinux.org/packages/extra/x86_64/freetype2/)<sup>1</sup> | font rendering library | `.config/fontconfig/fonts.conf` |
 | bash || `.bashrc`, `.bash_profile`  |
 | vim || `.vimrc` |
 | i3  || `.i3/config`, `i3status.conf`  |
@@ -15,7 +15,7 @@ A collection of my config files (aka dotfiles) from Arch Linux.
 | mimeapps  || `.local/share/applications/mimeapps.list`  |
 
 <hr>
-<sup>1</sup> config file stopped working for freetype2 version above 2.6.5-2. See #1
+<sup>1</sup> config file stopped working with freetype2 above 2.6.5-2. See [#1](https://github.com/rubickcz/dotfiles/issues/1)
 
 ## Installation
 
