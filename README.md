@@ -1,6 +1,6 @@
 # Dotfiles
 
-A collection of my config files (aka dotfiles) from Arch Linux.
+A collection of my config files (aka dotfiles) from Arch Linux. I prefer lightweight Linux setup, so most things are configured by editing config files with a text editor intead of using GUI tools.
 
 | application / program  | description | config file(s) |
 | ------------- | ------------- | ------------- |
