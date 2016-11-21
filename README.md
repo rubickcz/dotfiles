@@ -6,6 +6,8 @@ A collection of my config files (aka dotfiles) from Arch Linux. I prefer lightwe
 | ------------- | ------------- | ------------- |
 | [dunst](https://www.archlinux.org/packages/community/i686/dunst/) | notification daemon | `.config/dunst/dunstrc` |
 | [freetype2](https://www.archlinux.org/packages/extra/x86_64/freetype2/)<sup>1</sup> | font rendering library | `.config/fontconfig/fonts.conf` |
+| [Qt4](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | widget toolkit | `.config/Trolltech.conf` |
+| [X.org](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | display server | `.config/user-dirs.dirs` |
 | bash || `.bashrc`, `.bash_profile`  |
 | vim || `.vimrc` |
 | i3  || `.i3/config`, `i3status.conf`  |
@@ -32,7 +34,9 @@ Apart from programs listed in the table above, following dependencies shall also
 * [chromium](https://www.archlinux.org/packages/extra/x86_64/chromium/)
 * [dina-font](https://www.archlinux.org/packages/community/any/dina-font/)
 * [dmenu](https://www.archlinux.org/packages/community/x86_64/dmenu/)
+* [gnupg](https://www.archlinux.org/packages/?name=gnupg)
 * [ttf-dejavu](https://www.archlinux.org/packages/extra/any/ttf-dejavu/)
 
 ### Scripts in PATH (check [my scripts](https://github.com/rubickcz/scripts)):
-* alert.sh - plays a notification sound
+* alert.sh
+* feh_browser.sh
