@@ -11,14 +11,11 @@ A collection of my config files (aka dotfiles) from Arch Linux (desktop). I pref
 | [GTK+](https://www.archlinux.org/packages/extra/x86_64/gtk2/)  | widget-toolkit | `.gtkrc-2.0` |
 | [midnight commander](https://www.archlinux.org/packages/community/x86_64/mc/)  | file manager | `.config/mc/*`  |
 | [Qt4](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | widget toolkit | `.config/Trolltech.conf` |
-| [X.org](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | display server | `.config/user-dirs.dirs`<br>`.local/share/applications/mimeapps.list`  |
+| [X.org](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | display server | `.config/user-dirs.dirs`<br>`.local/share/applications/mimeapps.list`<br>`.xinitrc`  |
 | [xxkb](https://www.archlinux.org/packages/community/x86_64/xxkb/)<sup>2</sup> | keyboard layout indicator |`.xxkb/*`<br>`.xxkbrc`  |
 | [rxvt-unicode](https://www.archlinux.org/packages/community/x86_64/rxvt-unicode/) | terminal emulator | `.Xdefaults` |
 | [bash](https://www.archlinux.org/packages/core/x86_64/bash/) | unix shell | `.bash_profile`<br>`.bashrc`  |
-| vim || `.vimrc` |
-
-| xorg || `.Xdefaults`, `.xinitrc`  |
-| mimeapps  ||  |
+| [vim](https://www.archlinux.org/packages/extra/x86_64/gvim/)  | text editor | `.vimrc` |
 
 <hr>
 <sup>1</sup> config file stopped working with freetype2 above 2.6.5-2, see [#1](https://github.com/rubickcz/dotfiles/issues/1)  
