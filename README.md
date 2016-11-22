@@ -43,6 +43,7 @@ Some config files are using other programs/applications. In order to make everyt
 * [gnupg](https://www.archlinux.org/packages/core/x86_64/gnupg/)
 * [gsimplecal](https://www.archlinux.org/packages/community/x86_64/gsimplecal/)
 * [gtk-engines](https://www.archlinux.org/packages/extra/i686/gtk-engines/)
+* [libnotify](https://www.archlinux.org/packages/extra/i686/libnotify/)
 * [numlockx](https://www.archlinux.org/packages/community/x86_64/numlockx/)
 * [pass](https://www.archlinux.org/packages/community/any/pass/)
 * [python-colour](https://aur.archlinux.org/packages/python-colour/)
