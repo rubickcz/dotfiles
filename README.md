@@ -10,15 +10,17 @@ A collection of my config files (aka dotfiles) from Arch Linux (desktop). I pref
 | [i3pystatus](https://www.archlinux.org/groups/x86_64/i3/)  | i3status replacement | `.config/pystatus.py` |
 | [midnight commander](https://www.archlinux.org/packages/community/x86_64/mc/)  | file manager | `.config/mc/*`  |
 | [Qt4](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | widget toolkit | `.config/Trolltech.conf` |
-| [X.org](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | display server | `.config/user-dirs.dirs` |
+| [X.org](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | display server | `.config/user-dirs.dirs`<br>`.local/share/applications/mimeapps.list`  |
+| [xxkb](https://www.archlinux.org/packages/community/x86_64/xxkb/)<sup>2</sup> | keyboard layout indicator | `.xxkb/*`<br>`.xxkbrc`  |
 | bash || `.bashrc`, `.bash_profile`  |
 | vim || `.vimrc` |
-| xxkb || `.xxkb/*`, `.xxkbrc`  |
+
 | xorg || `.Xdefaults`, `.xinitrc`  |
-| mimeapps  || `.local/share/applications/mimeapps.list`  |
+| mimeapps  ||  |
 
 <hr>
-<sup>1</sup> config file stopped working with freetype2 above 2.6.5-2. See [#1](https://github.com/rubickcz/dotfiles/issues/1)
+<sup>1</sup> config file stopped working with freetype2 above 2.6.5-2, see [#1](https://github.com/rubickcz/dotfiles/issues/1)  
+<sup>2</sup> xxkb is currently not used, see [#3](https://github.com/rubickcz/dotfiles/issues/3)
 
 ## Installation
 
