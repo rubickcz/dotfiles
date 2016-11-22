@@ -26,7 +26,7 @@ A collection of my config files (aka dotfiles) from Arch Linux (desktop). I pref
 Clone the repository and execute `makesymlinks.sh` script, which:
 
 1. backups any existing config files in your home directory 
-2. creates symlinks to config files in this repository.
+2. replaces them with symlinks to config files in this repository
 
 ## Optional dependencies
 
