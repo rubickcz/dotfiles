@@ -51,7 +51,7 @@ Some config files are using other programs/applications. In order to make everyt
 * [python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/)
 * [ttf-dejavu](https://www.archlinux.org/packages/extra/any/ttf-dejavu/)
 * [ttf-font-awesome](https://aur.archlinux.org/packages/ttf-font-awesome/)
-* [udevil](https://www.archlinux.org/packages/community/x86_64/udevil/) (enable devmon service with `systemctl`)
+* [udevil](https://www.archlinux.org/packages/community/x86_64/udevil/)<sup>1</sup>
 * [viber](https://aur.archlinux.org/packages/viber/)
 * [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr)
 
@@ -59,3 +59,6 @@ Some config files are using other programs/applications. In order to make everyt
 * alert.sh
 * feh_browser.sh
 * monitor_toggle.sh
+
+<hr>
+<sup>1</sup> enable devmon service with `systemctl`
