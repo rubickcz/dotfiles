@@ -61,4 +61,4 @@ Some config files are using other programs/applications. In order to make everyt
 * monitor_toggle.sh
 
 <hr>
-<sup>1</sup> enable devmon service with `systemctl`
+<sup>1</sup> enable devmon service with `systemctl enable devmon@username.service`
