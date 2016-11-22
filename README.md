@@ -6,13 +6,12 @@ A collection of my config files (aka dotfiles) from Arch Linux (desktop). I pref
 | ------------- | ------------- | ------------- |
 | [dunst](https://www.archlinux.org/packages/community/i686/dunst/) | notification daemon | `.config/dunst/dunstrc` |
 | [freetype2](https://www.archlinux.org/packages/extra/x86_64/freetype2/)<sup>1</sup> | font rendering library | `.config/fontconfig/fonts.conf` |
+| [i3](https://www.archlinux.org/groups/x86_64/i3/)  | window manager | `.i3/config`<br>`.i3status.conf`  |
+| [midnight commander](https://www.archlinux.org/packages/community/x86_64/mc/)  || `.config/mc/*`  |
 | [Qt4](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | widget toolkit | `.config/Trolltech.conf` |
 | [X.org](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | display server | `.config/user-dirs.dirs` |
-| [i3](https://www.archlinux.org/groups/x86_64/i3/)  | window manager | `.i3/config`<br>`.i3status.conf`  |
 | bash || `.bashrc`, `.bash_profile`  |
 | vim || `.vimrc` |
-| i3  || `.i3/config`, `i3status.conf`  |
-| midnight commander  || `.config/mc/*`  |
 | xxkb || `.xxkb/*`, `.xxkbrc`  |
 | xorg || `.Xdefaults`, `.xinitrc`  |
 | mimeapps  || `.local/share/applications/mimeapps.list`  |
