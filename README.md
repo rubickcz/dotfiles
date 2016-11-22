@@ -41,8 +41,13 @@ Some config files are using other programs/applications. In order to make everyt
 * [gsimplecal](https://www.archlinux.org/packages/community/x86_64/gsimplecal/)
 * [numlockx](https://www.archlinux.org/packages/community/x86_64/numlockx/)
 * [pass](https://www.archlinux.org/packages/community/any/pass/)
+* [python-colour](https://aur.archlinux.org/packages/python-colour/)
+* [python-netifaces](https://www.archlinux.org/packages/community/x86_64/python-netifaces/)
+* [python-psutil](https://www.archlinux.org/packages/community/x86_64/python-psutil/)
+* [python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/)
 * [rxvt-unicode](https://www.archlinux.org/packages/community/x86_64/rxvt-unicode/)
 * [ttf-dejavu](https://www.archlinux.org/packages/extra/any/ttf-dejavu/)
+* [ttf-font-awesome](https://aur.archlinux.org/packages/ttf-font-awesome/)
 * [udevil](https://www.archlinux.org/packages/community/x86_64/udevil/)
 * [viber](https://aur.archlinux.org/packages/viber/)
 
