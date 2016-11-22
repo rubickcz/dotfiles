@@ -55,6 +55,7 @@ Some config files are using other programs/applications. In order to make everyt
 * [udevil](https://www.archlinux.org/packages/community/x86_64/udevil/)<sup>3</sup>
 * [viber](https://aur.archlinux.org/packages/viber/)
 * [xorg-xinit](https://www.archlinux.org/packages/extra/x86_64/xorg-xinit/)
+* [xorg-xinput](https://www.archlinux.org/packages/extra/x86_64/xorg-xinput/)
 * [xorg-xrandr](https://www.archlinux.org/packages/extra/x86_64/xorg-xrandr/)
 
 
