@@ -42,6 +42,12 @@ fi
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 
+# start devmon here, not via systemd (notify-send was not working)
+devmon \
+--exec-on-drive "notify-send \"Device %f has been mounted as %l\"" \
+--exec-on-unmount "notify-send \"Device %f has been unmounted\"" \
+&
+
 ###############################################
 # Custom HW related stuff
 ###############################################
