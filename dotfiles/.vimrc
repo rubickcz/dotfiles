@@ -48,8 +48,8 @@ set mouse=a                    " Enable mouse
 set wildmenu                   " Command line autocomplete menu (when TAB is pressed)
 set wildmode=longest:full,full " first find longest common string
 set path+=**                   " Allow gf search in current dir recursively
-set cmdheight=2				   " No need to press Enter twice after some commands
-set autoindent			       " Auto indent next line according to previous line
+set cmdheight=2                " No need to press Enter twice after some commands
+set autoindent                 " Auto indent next line according to previous line
 set backspace=indent,eol,start " Backspace setting
 set undofile                   " Remember undo tree even after unloading a buffer
 set undodir=$HOME/.vim/undo    " where to save undo tree
@@ -69,7 +69,7 @@ set autoread                   " Auto reload of file if changed outside of Vim
 set softtabstop=4              " Width of tab typed in insert mode
 set tabstop=4                  " Width of tab marks in file
 set shiftwidth=4               " Width of shift (when shifting lines, blocks...)
-set smarttab				   " Use smart tab
+set smarttab                   " Use smart tab
 set expandtab                  " Expand tabs to spaces
 
 " enable syntax highlighting and set color scheme
