@@ -12,7 +12,7 @@ confirm_delete=1
 confirm_overwrite=1
 confirm_execute=0
 confirm_history_cleanup=1
-confirm_exit=1
+confirm_exit=0
 confirm_directory_hotlist_delete=1
 safe_delete=0
 mouse_repeat_rate=100
@@ -102,7 +102,7 @@ menubar_visible=1
 free_space=1
 horizontal_split=0
 vertical_equal=1
-left_panel_size=136
+left_panel_size=68
 horizontal_equal=1
 top_panel_size=31
 
@@ -122,6 +122,8 @@ base_color=
 
 xterm-256color=
 color_terminals=
+
+rxvt-unicode-256color=
 
 [Panels]
 show_mini_info=true
@@ -145,6 +147,8 @@ quick_search_mode=2
 simple_swap=false
 
 select_flags=6
+
+panel_scroll_center=false
 
 [HotlistConfig]
 expanded_view_of_groups=0

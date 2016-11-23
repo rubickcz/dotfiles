@@ -1,0 +1,2 @@
+ENTRY "Mounted media (/mnt)" URL "/mnt"
+ENTRY "Downloads (/home/ondra/downloads)" URL "/home/ondra/downloads"

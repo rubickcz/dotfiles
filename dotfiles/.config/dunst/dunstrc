@@ -118,7 +118,7 @@
     startup_notification = false
 
     # dmenu path
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/dmenu -b -p DUNST:
 
     # browser for opening urls in context menu
     browser = /usr/bin/chromium
@@ -150,13 +150,13 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
     background = "#222222"
-    foreground = "#888888"
-    timeout = 7
+    foreground = "#aaaaaa"
+    timeout = 10
 
 [urgency_normal]
     background = "#285577"
     foreground = "#ffffff"
-    timeout = 7
+    timeout = 10
 
 [urgency_critical]
     background = "#900000"
@@ -181,6 +181,10 @@
 # NOTE: if you don't want a notification to be displayed, set the format to ""
 # NOTE: It might be helpful to run dunst -print in a terminal in order to find
 # fitting options for rules.
+
+[play_sound]
+     summary = "*"
+     script = /home/ondra/projects/scripts/alert.sh
 
 #[espeak]
 #    summary = "*"

@@ -11,29 +11,21 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" --> GITHUB PLUGINS 
-Plugin 'kien/ctrlp.vim' 
+" --> GITHUB PLUGINS
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'sjl/gundo.vim'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'tpope/vim-surround'
-"Plugin 'tpope/vim-sensible'
-"Plugin 'bling/vim-airline'
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'godlygeek/tabular'
-"Plugin 'plasticboy/vim-markdown'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'bling/vim-airline'
-"Plugin 'Rip-Rip/clang_complete'
-
-" --> VIM.ORG PLUGINS
-Plugin 'a.vim'
-Plugin 'taglist.vim'
+Plugin 'vim-scripts/a.vim'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'bitc/vim-bad-whitespace'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'hdima/python-syntax'
 
 " --> COLORS
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'rubickcz/my-jellybeans'
+Plugin 'rubickcz/my-jellybeans.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,6 +34,7 @@ filetype plugin indent on    " required
 "===========================================================================
 " General settings
 "===========================================================================
+set encoding=utf8              " Edit files in UTF8
 set nocompatible               " Use Vi Improved
 set number                     " Show line numbers
 set ruler                      " Show cursor position in right bottom corner
@@ -56,28 +49,32 @@ set wildmenu                   " Command line autocomplete menu (when TAB is pre
 set wildmode=longest:full,full " first find longest common string
 set path+=**                   " Allow gf search in current dir recursively
 set cmdheight=2				   " No need to press Enter twice after some commands
-set autoindent			       " Auto indent next line according to previous line	
+set autoindent			       " Auto indent next line according to previous line
 set backspace=indent,eol,start " Backspace setting
+set undofile                   " Remember undo tree even after unloading a buffer
+set undodir=$HOME/.vim/undo    " where to save undo tree
 
-set timeout
+
+set timeout                    " Timeout settings for command sequences
 set timeoutlen=400
 set ttimeout
 set ttimeoutlen=400
-set laststatus=2
-set scrolloff=1
-set sidescrolloff=5
-set display+=lastline
-set autoread
+
+set laststatus=2               " Enable status line for all windows
+set scrolloff=1                " Always keep one line below/above the cursor
+set sidescrolloff=5            " Always keep five characters to the left/right of the cursor
+set display+=lastline          " Show last line even if it does not fit the screen (do not show @)
+set autoread                   " Auto reload of file if changed outside of Vim
 
 set softtabstop=4              " Width of tab typed in insert mode
 set tabstop=4                  " Width of tab marks in file
 set shiftwidth=4               " Width of shift (when shifting lines, blocks...)
-set smarttab				   " User smart tab
-set expandtab
+set smarttab				   " Use smart tab
+set expandtab                  " Expand tabs to spaces
 
 " enable syntax highlighting and set color scheme
-syntax enable 
-colorscheme my-jellybeans 
+syntax enable
+colorscheme my-jellybeans
 
 " Load man plugin
 runtime! ftplugin/man.vim
@@ -93,15 +90,19 @@ map <f5> <esc>:update<cr>:make<cr>
 map cn <esc>:cn<cr>
 map cp <esc>:cp<cr>
 
-map <F10> :GundoToggle<CR>
+" Open NerdTree
 map <F11> :NERDTreeToggle<CR>
+" Open Tag list
 map <F12> :TlistToggle<CR>
 
 " open shell (Ctrl-D to go back to Vim)
 map <C-s> :sh<CR>
-
+" Open CtrlP
 map <C-p> :CtrlP<CR>
+" Open Buffer Explorer
 map <C-k> :ToggleBufExplorer<CR>
+
+" Open alternate file (*.c/*.h)
 map <Leader>a :A<CR>
 
 " refresh ctags
@@ -114,6 +115,8 @@ map <leader>4 :diffget 4<CR> :diffupdate<CR>
 
 " remove search highlight
 map <C-l> :nohlsearch<CR>
+
+" map omnicomplete to CTRL-Space
 imap <C-Space> <C-x><C-o>
 imap <C-@> <C-Space>
 
@@ -143,7 +146,38 @@ function! s:insert_gates()
   execute "normal! O"
   normal! kk
 endfunction
-autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
+
+" Close all open buffers on entering a window if the only
+" buffer that's left is the NERDTree buffer
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
+function SetPythonSettings()
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+    set textwidth=79
+    set expandtab
+    set autoindent
+    set fileformat=unix
+endfunction
+
+function SetHTMLSettings()
+    set tabstop=2
+    set softtabstop=2
+    set shiftwidth=2
+    set textwidth=0
+    set expandtab
+    set autoindent
+    set fileformat=unix
+endfunction
 
 "=========================================================================
 " AUTO COMMANDS
@@ -154,13 +188,27 @@ autocmd VimEnter * NERDTree
 " ...and switch to its window
 autocmd VimEnter * wincmd p
 " close NERDTree if it's the only buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+" when editing vimrc, K opens Vim help instead of man page
+autocmd FileType vim setlocal keywordprg=:help
+" insert include guards
+autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
+
+" indentation for Python according to PEP8
+au BufNewFile,BufRead *.py call SetPythonSettings()
+
+" indentation for HTML
+au BufNewFile,BufRead *.html call SetHTMLSettings()
+
+" Don't open doc string window when using completion
+autocmd FileType python setlocal completeopt-=preview
+
 
 "=========================================================================
 " Other
 "======================================================================
 
-" change status bar color in insert mode 
+" change status bar color in insert mode
 if version >= 700
   au InsertEnter * hi StatusLine ctermbg=22
   au InsertLeave * hi StatusLine ctermbg=24
@@ -186,10 +234,6 @@ map <PageDown> <nop>
 " PLUGIN specific settings
 "======================================================================
 
-let g:gundo_right = 1
-
-" Markdown folding disable
-let g:vim_markdown_folding_disabled=1 
 " Focus Tags List when opened
 let g:Tlist_GainFocus_On_ToggleOpen=1
 " Show Tags list on the right
@@ -199,18 +243,9 @@ let g:Tlist_Show_One_File = 1
 " Extensions for CtrlP
 let g:ctrlp_extensions = ['tag']
 
-"let g:ycm_min_num_of_chars_for_completion = 99
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-"let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-"let g:ycm_enable_diagnostic_signs = 0
-"let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_confirm_extra_conf = 0
-"let g:ycm_show_diagnostics_ui = 0
+" ignore puthon pyc files
+let NERDTreeIgnore = ['\.pyc$','__pycache__$']
 
 " disable leader key bindings of buffer explorer
 silent! nunmap <leader>bv
 silent! nunmap <leader>bs
-
-autocmd FileType html setlocal shiftwidth=2 tabstop=2

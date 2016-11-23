@@ -11,12 +11,11 @@
 export PATH
 
 # History settings
-export HISTCONTROL=ignoredups	# Don't store repeat commands
+export HISTCONTROL=ignoreboth	# Don't store duplications and commands beginning with a space
 export HISTSIZE=10000			# Store 10000 commands from current session
 export HISTFILESIZE=10000		# Keep a record of 10000 commands
 
 # 256 color terminal
-# TODO: there should be condition, tty does not support 256 colors
 export TERM=xterm-256color
 
 export EDITOR=vim
@@ -30,6 +29,7 @@ alias ls='ls -h --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='la -al'
+alias mc='. /usr/lib/mc/mc-wrapper.sh'
 alias grep='grep --color=auto'
 alias pingg='ping 8.8.8.8'
 alias pacman='sudo pacman'
@@ -43,7 +43,6 @@ alias webserver-here='python -m http.server 8000'
 # show top 10 largest files in the current dir
 alias top10='find . -type f -exec du -h {} + | sort -rh | head -n 10'
 alias feh='feh -F -d -S filename'
-alias web='cd projects/website'
 # top 10 largest installed packages
 alias top10pkg='pacman -Qi|awk '"'"'/^Installed Size/{print int($4), name} /^Name/{name=$3}'"'"'|sort -nr | head -n 10'
 # show dirs not owned by any package
@@ -56,7 +55,6 @@ alias pacman-disowned-files="comm -23 <(sudo find / \( -path '/dev' -o -path '/s
 # auto complete sudo
 complete -cf sudo
 complete -cf man
-#source /etc/bash_completion.d/password-store
 
 # Set prompt
 PS1='[\u@\h \W]\$ '
@@ -95,8 +93,10 @@ extract ()
   fi
 }
 
-## TODO and ideas
-#  - find files with search pattern
-#  - output size of direcotry
-#  - youtube video download
-#  - image/sound/video manipulation functions
+# include private settings
+PRIVATE_BASHRC=".bashrc_private"
+if [ -f $PRIVATE_BASHRC ]; then
+    source $PRIVATE_BASHRC
+else
+    echo "Warning! File $PRIVATE_BASHRC was not found."
+fi

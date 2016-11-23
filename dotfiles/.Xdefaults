@@ -1,22 +1,16 @@
-! enable font-size change on the fly
-URxvt.perl-ext-common:  font-size
-
 ! Trasnparency
 URxvt*.transparent: true
-URxvt*.shading: 10 
+URxvt*.shading: 10
 
 ! No scrollbar
 URxvt.scrollBar: false
 
 ! Font
-#URxvt.font: xft:Dejavu Sans Mono:size=8
 urxvt.font: xft:dina:pixelsize=10
-# Disable strange Ctrl+Shift modes
+
+! Disable strange Ctrl+Shift modes
 URxvt.iso14755: false
 URxvt.iso14755_52: false
-# Font change on the fly
-URxvt.keysym.C-Up:     perl:font-size:increase
-URxvt.keysym.C-Down:   perl:font-size:decrease
 
 ! Colors
 *background: #50404D
