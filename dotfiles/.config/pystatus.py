@@ -57,7 +57,9 @@ status.register("disk",
 # ping
 status.register(
     "ping",
-    format="{ping} ms"
+    format="  {ping} ms",
+    format_down="unreachable",
+    color="#1ad892"
 )
 
 # network usage
@@ -76,7 +78,7 @@ status.register(
     "updates",
     format="  {count}",
     backends = pacman.Pacman(),
-    color="#1ad892"
+    color="#fff98c"
 )
 
 # weather
