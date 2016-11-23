@@ -199,7 +199,7 @@ assign [class="Evince"] 5:pdf
 # Autostart
 exec viber
 exec fbxkb
-exec feh --bg-fill '/home/ondra/media/images/wallpapers/current.jpg'
+exec feh --bg-fill ~/media/images/wallpapers/current.jpg
 exec setxkbmap -layout us,cz -option grp:alt_shift_toggle
 exec urxvtd
 exec numlockx
