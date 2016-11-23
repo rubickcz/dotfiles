@@ -182,40 +182,12 @@
 # NOTE: It might be helpful to run dunst -print in a terminal in order to find
 # fitting options for rules.
 
+# Play sound with every notification. It would be nicer, if script could be
+# searched in PATH (without specifying absolute path), but dunst is started by
+# systemd, which has no idea about my PATH variable. It would involve adding
+# another config file for systemd. Easier option (for now) is to have absolute
+# path here.
+
 [play_sound]
      summary = "*"
      script = /home/ondra/projects/scripts/alert.sh
-
-#[espeak]
-#    summary = "*"
-#    script = dunst_espeak.sh
-
-#[script-test]
-#    summary = "*script*"
-#    script = dunst_test.sh
-
-#[ignore]
-## This notification will not be displayed
-#    summary = "foobar"
-#    format = ""
-
-#[signed_on]
-#    appname = Pidgin
-#    summary = "*signed on*"
-#    urgency = low
-#
-#[signed_off]
-#    appname = Pidgin
-#    summary = *signed off*
-#    urgency = low
-#
-#[says]
-#    appname = Pidgin
-#    summary = *says*
-#    urgency = critical
-#
-#[twitter]
-#    appname = Pidgin
-#    summary = *twitter.com*
-#    urgency = normal
-#
