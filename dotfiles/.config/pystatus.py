@@ -78,7 +78,7 @@ status.register(
     "updates",
     format="  {count}",
     backends = pacman.Pacman(),
-    color="#ff91f5"
+    color="#ffa99e"
 )
 
 # weather
