@@ -190,6 +190,9 @@ bindsym $mod+m exec monitor-toggle.sh
 # Open password store menu
 bindsym $mod+p exec passmenu -b -p "PASSWORD STORE:"
 
+# Suspend
+bindsym $mod+Pause exec systemctl suspend
+
 # Application assignments to workspaces
 assign [class="Chromium"] 2:web
 assign [class="Viber"] 3:viber
@@ -200,7 +203,7 @@ assign [class="Evince"] 5:pdf
 exec viber
 exec fbxkb
 exec feh --bg-fill ~/media/images/wallpapers/current.jpg
-exec setxkbmap -layout us,cz -option grp:alt_shift_toggle
+exec setxkbmap -layout us,cz -variant ,qwerty -option grp:alt_shift_toggle
 exec urxvtd
 exec numlockx
 
