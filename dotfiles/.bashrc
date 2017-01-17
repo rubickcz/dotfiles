@@ -100,3 +100,8 @@ if [ -f $PRIVATE_BASHRC ]; then
 else
     echo "Warning! File $PRIVATE_BASHRC was not found."
 fi
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/other/venvs
+export PROJECT_HOME=$HOME/projects
+source /usr/bin/virtualenvwrapper.sh
