@@ -19,6 +19,16 @@ status.register(
     color_muted="#FFFF00"
 )
 
+# audio pre-amp
+#status.register(
+#    "alsa",
+#    mixer="Pre-Amp",
+#    format="Pre: {volume}%",
+#    color_muted="#FFFF00",
+#    on_upscroll = ["increase_volume", 20],
+#    on_downscroll = ["decrease_volume", 20]
+#)
+
 # cpu temp
 status.register(
     "temp",
@@ -84,7 +94,7 @@ status.register(
 # weather
 status.register(
     'weather',
-    format='{condition} {current_temp}{temp_unit}, {wind_speed} {wind_unit}[ {update_error}]',
+    format='{condition} {current_temp}{temp_unit}, {wind_speed} {wind_unit}, {humidity}% [ {update_error}]',
     colorize=True,
     backend=weathercom.Weathercom(
         location_code='EZOL0370:1:EZ',
