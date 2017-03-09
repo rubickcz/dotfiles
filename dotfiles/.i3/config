@@ -191,7 +191,7 @@ bindsym $mod+m exec monitor-toggle.sh
 bindsym $mod+p exec passmenu -b -p "PASSWORD STORE:"
 
 # Suspend
-bindsym $mod+Pause exec systemctl suspend
+bindsym $mod+Pause exec "i3lock -c 000000;systemctl suspend"
 
 # Application assignments to workspaces
 assign [class="Chromium"] 2:web
