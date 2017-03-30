@@ -1,3 +1,5 @@
+import socket
+
 from i3pystatus import Status
 from i3pystatus.updates import pacman
 from i3pystatus.weather import weathercom
@@ -29,12 +31,19 @@ status.register(
 #    on_downscroll = ["decrease_volume", 20]
 #)
 
+if socket.gethostname() == 'golem':
+    # for golem machine (desktop pc), use thermal zone #2
+    tz = '2'
+else:
+    # other machines use thermal zone #0
+    tz = '0'
+
 # cpu temp
 status.register(
     "temp",
     format="{temp:.0f}°C",
     color="#84daff",
-    file="/sys/class/thermal/thermal_zone2/temp"
+    file="/sys/class/thermal/thermal_zone"+tz+"/temp"
 )
 
 # cpu frequency
