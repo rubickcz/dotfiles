@@ -2,6 +2,21 @@
 
 A collection of my config files (aka dotfiles) from Arch Linux. This project is intended to quickly setup my customized environment on a new machine.
 
+## Installation
+
+1. Clone the repository
+```
+$ git clone https://github.com/rubickcz/dotfiles.git
+```
+2. Execute `installdeps.sh` to install dependencies (see list of dependencies below)
+```
+$ ./installdeps.sh
+```
+3. Execute `makesymlinks.sh` to backup any existing config files in your home directory and replace them with symlinks to config files in this repository
+```
+$ ./makesymlinks.sh
+```
+
 ## Config files
 
 | application / program  | description | config file(s) |
@@ -23,12 +38,6 @@ A collection of my config files (aka dotfiles) from Arch Linux. This project is 
 <sup>1</sup> config file stopped working with freetype2 above 2.6.5-2, see https://github.com/rubickcz/dotfiles/issues/1<br> 
 <sup>2</sup> xxkb is currently not used, see https://github.com/rubickcz/dotfiles/issues/3
 
-## Installation
-
-Clone the repository and execute `makesymlinks.sh` script, which:
-
-1. backups any existing config files in your home directory 
-2. replaces them with symlinks to config files in this repository
 
 ## Optional dependencies
 
