@@ -77,6 +77,9 @@ status.register("disk",
 if socket.gethostname() == 'golem':
     # golem machine (desktop pc)
     iface = 'enp2s0'
+elif socket.gethostname() == 'marshadow':
+    # marshadow machine (laptop)
+    iface = 'enp0s25'
 else:
     # other machines
     iface = 'eth0'
