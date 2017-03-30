@@ -6,7 +6,7 @@ A collection of my config files (aka dotfiles) from Arch Linux. This project is 
 
 1. Clone the repository
 ```
-$ git clone https://github.com/rubickcz/dotfiles.git
+$ git clone https://github.com/rubickcz/dotfiles.git && cd dotfiles
 ```
 2. Execute `installdeps.sh` to install dependencies (see list of dependencies below)
 ```
