@@ -2,6 +2,10 @@
 
 A collection of my config files (aka dotfiles) from Arch Linux. This project is intended to quickly setup my customized environment on a new machine. 
 
+Here's a quick look what you get after installation (click to full size):
+
+![Appearance of the configured desktop](https://raw.githubusercontent.com/rubickcz/dotfiles/master/desktop.png)
+
 ## What's included?
 
 | application / program  | description | config file(s) |
