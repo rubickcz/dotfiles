@@ -73,6 +73,22 @@ status.register("disk",
     format="  {avail}G"
 )
 
+
+if socket.gethostname() == 'golem':
+    # golem machine (desktop pc)
+    iface = 'enp2s0'
+else:
+    # other machines
+    iface = 'eth0'
+
+# network
+status.register(
+    "network",
+    interface=iface,
+    color_up="#A0A0A0",
+    format_up="{v4}"
+)
+
 # ping
 status.register(
     "ping",
