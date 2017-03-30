@@ -40,22 +40,16 @@ $ ./makesymlinks.sh
 ```
 
 ## Post install
-Following steps should be done after installation.
 
-### Install Vim plugins
 1. Install [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
 ```
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 2. Launch `vim` and issue `:PluginInstall` command
-
-### Set wallpaper
-Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`
-
-### Add private stuff
-These things are not included in this repository:
-* SSH and PGP keys
-* Encrypted password store
-* `.bashrc_private` file with custom aliases
+3. Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`
+4. Add private stuff (not included in this repo):
+    * SSH and PGP keys
+    * Encrypted password store
+    * `.bashrc_private` file with custom aliases
 
 
