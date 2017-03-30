@@ -1,6 +1,6 @@
 # Dotfiles
 
-A collection of my config files (aka dotfiles) from Arch Linux. This project is intended to quickly setup my customized environment on a new machine.
+A collection of my config files (aka dotfiles) from Arch Linux. This project is intended to quickly setup my customized environment on a new machine. 
 
 ## What's included?
 
@@ -52,4 +52,8 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     * Encrypted password store
     * `.bashrc_private` file with custom aliases
 
+## Note
 
+Some config files contain hardware dependent options for specific machines. A machine is recognized by its hostname. Currently, I have following machines:
+* **golem** - Desktop PC
+* **marshadow** - Dell laptop
