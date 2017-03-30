@@ -1,13 +1,15 @@
 # Dotfiles
 
-A collection of my config files (aka dotfiles) from Arch Linux (desktop). I prefer lightweight Linux setup, so most things are configured by editing config files with a text editor intead of using GUI tools.
+A collection of my config files (aka dotfiles) from Arch Linux. This project is intended to quickly setup my customized environment on a new machine.
+
+## Config files
 
 | application / program  | description | config file(s) |
 | ------------- | ------------- | ------------- |
 | [dunst](https://www.archlinux.org/packages/community/i686/dunst/) | notification daemon | `.config/dunst/dunstrc` |
 | [freetype2](https://www.archlinux.org/packages/extra/x86_64/freetype2/)<sup>1</sup> | font rendering library | `.config/fontconfig/fonts.conf` |
 | [i3](https://www.archlinux.org/groups/x86_64/i3/)  | window manager | `.i3/config` |
-| [i3pystatus](https://www.archlinux.org/groups/x86_64/i3/)  | i3status replacement | `.config/pystatus.py` |
+| [i3pystatus](https://aur.archlinux.org/packages/i3pystatus/)  | i3status replacement | `.config/pystatus.py` |
 | [GTK+](https://www.archlinux.org/packages/extra/x86_64/gtk2/)  | widget-toolkit | `.gtkrc-2.0` |
 | [midnight commander](https://www.archlinux.org/packages/community/x86_64/mc/)  | file manager | `.config/mc/*`  |
 | [Qt4](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | widget toolkit | `.config/Trolltech.conf` |
@@ -18,7 +20,7 @@ A collection of my config files (aka dotfiles) from Arch Linux (desktop). I pref
 | [vim](https://www.archlinux.org/packages/extra/x86_64/gvim/)  | text editor | `.vimrc` |
 
 <hr>
-<sup>1</sup> config file stopped working with freetype2 above 2.6.5-2, see [#1](https://github.com/rubickcz/dotfiles/issues/1)  
+<sup>1</sup> config file stopped working with freetype2 above 2.6.5-2, see [#1](https://github.com/rubickcz/dotfiles/issues/1)<br> 
 <sup>2</sup> xxkb is currently not used, see [#3](https://github.com/rubickcz/dotfiles/issues/3)
 
 ## Installation
