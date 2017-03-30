@@ -55,15 +55,18 @@ devmon \
 # disable PC speaker beeping
 xset -b
 
-# set mouse sensitivity & acceleration
-xinput set-prop 13 269 1.5
-xset m 3 1
+# Stuff related to golem machine (desktop pc)
+if [ "$HOSTNAME" = golem ]; then
+    # set mouse sensitivity & acceleration
+    xinput set-prop 13 269 1.5
+    xset m 3 1
 
-# disable second monitor (VGA) if main monitor (HDMI) is connected
-xrandr | grep "HDMI1 connected" > /dev/null
-if [ $? -eq 0 ]; then
-    xrandr --output DP1 --off
-    xrandr --output HDMI1 --primary
+    # disable second monitor (VGA) if main monitor (HDMI) is connected
+    xrandr | grep "HDMI1 connected" > /dev/null
+    if [ $? -eq 0 ]; then
+        xrandr --output DP1 --off
+        xrandr --output HDMI1 --primary
+    fi
 fi
 
 ###############################################

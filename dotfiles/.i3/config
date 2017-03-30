@@ -211,4 +211,4 @@ exec numlockx
 focus_follows_mouse no
 for_window [class="Chromium"] border none
 for_window [class="Viber"] border none
-for_window [class="Gsimplecal"] border none floating enable move absolute position 1700px 30px
+for_window [class="Gsimplecal"] border none floating enable move absolute position 1700px 30px # this works nice only on FullHD display :(
