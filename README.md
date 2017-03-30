@@ -8,11 +8,13 @@ A collection of my config files (aka dotfiles) from Arch Linux. This project is 
 ```
 $ git clone https://github.com/rubickcz/dotfiles.git && cd dotfiles
 ```
-2. Execute `installdeps.sh` to install dependencies (see list of dependencies below)
+2. Execute `installdeps.sh` to install dependencies
 ```
 $ ./installdeps.sh
 ```
-3. Execute `makesymlinks.sh` to backup any existing config files in your home directory and replace them with symlinks to config files in this repository
+3. Install my [scripts](https://github.com/rubickcz/scripts)
+
+4. Execute `makesymlinks.sh` to backup any existing config files in your home directory and replace them with symlinks to config files in this repository
 ```
 $ ./makesymlinks.sh
 ```
@@ -26,6 +28,15 @@ Following steps should be done after installation.
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 2. Launch `vim` and issue `:PluginInstall` command
+
+### Set wallpaper
+Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`
+
+### Add private stuff
+These things are not included in this repository:
+* SSH and PGP keys
+* Encrypted password store
+* `.bashrc_private` file with custom aliases
 
 ## Config files
 
@@ -47,42 +58,3 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 <hr>
 <sup>1</sup> config file stopped working with freetype2 above 2.6.5-2, see https://github.com/rubickcz/dotfiles/issues/1<br> 
 <sup>2</sup> xxkb is currently not used, see https://github.com/rubickcz/dotfiles/issues/3
-
-
-## Optional dependencies
-
-Some config files are using other programs/applications. In order to make everything work flawlessly, following dependencies shall be installed as well:
-
-### Arch Linux packages
-* [alsa-utils](https://www.archlinux.org/packages/extra/x86_64/alsa-utils/)
-* [bash-completion](https://www.archlinux.org/packages/extra/any/bash-completion/)
-* [chromium](https://www.archlinux.org/packages/extra/x86_64/chromium/)
-* [ctags](https://www.archlinux.org/packages/extra/x86_64/ctags/)
-* [fbxkb](https://aur.archlinux.org/packages/fbxkb/)
-* [feh](https://www.archlinux.org/packages/?name=feh)
-* [dina-font](https://www.archlinux.org/packages/community/any/dina-font/)
-* [dmenu](https://www.archlinux.org/packages/community/x86_64/dmenu/)
-* [gnupg](https://www.archlinux.org/packages/core/x86_64/gnupg/)
-* [gsimplecal](https://www.archlinux.org/packages/community/x86_64/gsimplecal/)
-* [gtk-engines](https://www.archlinux.org/packages/extra/i686/gtk-engines/)
-* [libnotify](https://www.archlinux.org/packages/extra/i686/libnotify/)
-* [numlockx](https://www.archlinux.org/packages/community/x86_64/numlockx/)
-* [pass](https://www.archlinux.org/packages/community/any/pass/)
-* [python-colour](https://aur.archlinux.org/packages/python-colour/)
-* [python-netifaces](https://www.archlinux.org/packages/community/x86_64/python-netifaces/)
-* [python-psutil](https://www.archlinux.org/packages/community/x86_64/python-psutil/)
-* [python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/)
-* [ttf-dejavu](https://www.archlinux.org/packages/extra/any/ttf-dejavu/)
-* [ttf-font-awesome](https://aur.archlinux.org/packages/ttf-font-awesome/)
-* [udevil](https://www.archlinux.org/packages/community/x86_64/udevil/)
-* [viber](https://aur.archlinux.org/packages/viber/)
-* [wget](https://www.archlinux.org/packages/extra/x86_64/wget/)
-* [xorg-xinit](https://www.archlinux.org/packages/extra/x86_64/xorg-xinit/)
-* [xorg-xinput](https://www.archlinux.org/packages/extra/x86_64/xorg-xinput/)
-* [xorg-xrandr](https://www.archlinux.org/packages/extra/x86_64/xorg-xrandr/)
-
-
-### Scripts in PATH (check [my scripts](https://github.com/rubickcz/scripts)):
-* alert.sh
-* feh_browser.sh
-* monitor_toggle.sh
