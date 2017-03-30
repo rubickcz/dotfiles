@@ -1,6 +1,8 @@
 ! Trasnparency
-URxvt*.transparent: true
-URxvt*.shading: 10
+URxvt.transparent: true
+URxvt.shading: 0
+!URxvt.tintColor: black
+URxvt.inheritPixmap: true
 
 ! No scrollbar
 URxvt.scrollBar: false
