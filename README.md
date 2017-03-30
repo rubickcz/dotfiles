@@ -20,8 +20,8 @@ A collection of my config files (aka dotfiles) from Arch Linux. This project is 
 | [vim](https://www.archlinux.org/packages/extra/x86_64/gvim/)  | text editor | [`.vimrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.vimrc) |
 
 <hr>
-<sup>1</sup> config file stopped working with freetype2 above 2.6.5-2, see [issue #1](https://github.com/rubickcz/dotfiles/issues/1)<br> 
-<sup>2</sup> xxkb is currently not used, see [issue #3](https://github.com/rubickcz/dotfiles/issues/3)
+<sup>1</sup> config file stopped working with freetype2 above 2.6.5-2, see (https://github.com/rubickcz/dotfiles/issues/1)<br> 
+<sup>2</sup> xxkb is currently not used, see (https://github.com/rubickcz/dotfiles/issues/3)
 
 ## Installation
 
