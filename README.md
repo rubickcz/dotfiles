@@ -76,6 +76,7 @@ Some config files are using other programs/applications. In order to make everyt
 * [ttf-font-awesome](https://aur.archlinux.org/packages/ttf-font-awesome/)
 * [udevil](https://www.archlinux.org/packages/community/x86_64/udevil/)
 * [viber](https://aur.archlinux.org/packages/viber/)
+* [wget](https://www.archlinux.org/packages/extra/x86_64/wget/)
 * [xorg-xinit](https://www.archlinux.org/packages/extra/x86_64/xorg-xinit/)
 * [xorg-xinput](https://www.archlinux.org/packages/extra/x86_64/xorg-xinput/)
 * [xorg-xrandr](https://www.archlinux.org/packages/extra/x86_64/xorg-xrandr/)
