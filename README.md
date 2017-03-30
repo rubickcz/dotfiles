@@ -17,6 +17,16 @@ $ ./installdeps.sh
 $ ./makesymlinks.sh
 ```
 
+## Post install
+Following steps should be done after installation.
+
+### Install Vim plugins
+1. Install [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
+```
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+2. Launch `vim` and issue `:PluginInstall` command
+
 ## Config files
 
 | application / program  | description | config file(s) |
