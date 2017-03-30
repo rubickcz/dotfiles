@@ -57,7 +57,7 @@ Some config files are using other programs/applications. In order to make everyt
 * [alsa-utils](https://www.archlinux.org/packages/extra/x86_64/alsa-utils/)
 * [bash-completion](https://www.archlinux.org/packages/extra/any/bash-completion/)
 * [chromium](https://www.archlinux.org/packages/extra/x86_64/chromium/)
-* [ctags](https://www.archlinux.org/packages/extra/i686/ctags/)
+* [ctags](https://www.archlinux.org/packages/extra/x86_64/ctags/)
 * [fbxkb](https://aur.archlinux.org/packages/fbxkb/)
 * [feh](https://www.archlinux.org/packages/?name=feh)
 * [dina-font](https://www.archlinux.org/packages/community/any/dina-font/)
