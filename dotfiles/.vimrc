@@ -179,6 +179,13 @@ function SetHTMLSettings()
     set fileformat=unix
 endfunction
 
+function SetCSSSettings()
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+    call SetHTMLSettings()
+endfunction
+
 "=========================================================================
 " AUTO COMMANDS
 "======================================================================
@@ -196,9 +203,11 @@ autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
 
 " indentation for Python according to PEP8
 au BufNewFile,BufRead *.py call SetPythonSettings()
+au BufNewFile,BufRead *.js call SetPythonSettings()
 
-" indentation for HTML
+" indentation for HTML & CSS
 au BufNewFile,BufRead *.html call SetHTMLSettings()
+au BufNewFile,BufRead *.css call SetCSSSettings()
 
 " Don't open doc string window when using completion
 autocmd FileType python setlocal completeopt-=preview

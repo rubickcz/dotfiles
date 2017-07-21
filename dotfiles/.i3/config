@@ -200,7 +200,7 @@ assign [class="Vlc"] 4:media
 assign [class="Evince"] 5:pdf
 
 # Autostart
-exec viber
+# exec viber
 exec fbxkb
 exec feh --bg-fill ~/media/images/wallpapers/current.jpg
 exec setxkbmap -layout us,cz -variant ,qwerty -option grp:alt_shift_toggle
