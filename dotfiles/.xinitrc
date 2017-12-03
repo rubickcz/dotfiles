@@ -48,6 +48,9 @@ devmon \
 --exec-on-unmount "notify-send \"Automount\" \"Device %f has been unmounted.\"" \
 &
 
+# start ssh agent
+eval $(ssh-agent)
+
 ###############################################
 # Custom HW related stuff
 ###############################################
