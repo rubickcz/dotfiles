@@ -55,6 +55,12 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     * SSH and PGP keys
     * Encrypted password store
     * `.bashrc_private` file with custom aliases
+    
+### Marshadow specific
+1. Enable `hdparm` command to be launched via sudo without password by adding this line via `visudo`:
+```
+ondra ALL=(ALL) NOPASSWD: /usr/bin/hdparm
+```
 
 ## Note
 
