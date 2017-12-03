@@ -163,7 +163,7 @@ function SetPythonSettings()
     set tabstop=4
     set softtabstop=4
     set shiftwidth=4
-    set textwidth=79
+    set textwidth=100
     set expandtab
     set autoindent
     set fileformat=unix
@@ -180,10 +180,10 @@ function SetHTMLSettings()
 endfunction
 
 function SetCSSSettings()
+    call SetHTMLSettings()
     set tabstop=4
     set softtabstop=4
     set shiftwidth=4
-    call SetHTMLSettings()
 endfunction
 
 "=========================================================================
@@ -208,6 +208,7 @@ au BufNewFile,BufRead *.js call SetPythonSettings()
 " indentation for HTML & CSS
 au BufNewFile,BufRead *.html call SetHTMLSettings()
 au BufNewFile,BufRead *.css call SetCSSSettings()
+au BufNewFile,BufRead *.less call SetCSSSettings()
 
 " Don't open doc string window when using completion
 autocmd FileType python setlocal completeopt-=preview
