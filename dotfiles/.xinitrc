@@ -69,6 +69,13 @@ if [ "$HOSTNAME" = golem ]; then
     fi
 fi
 
+# Stuff related to marshadow machine (Dell E6400 laptop)
+if [ "$HOSTNAME" = marshadow ]; then
+    # disable HDD power management (causes clicking sounds)
+    sudo hdparm -B 254 /dev/sda
+fi
+
+
 ###############################################
 # Start window manager
 ###############################################

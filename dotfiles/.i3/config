@@ -206,6 +206,7 @@ exec feh --bg-fill ~/media/images/wallpapers/current.jpg
 exec setxkbmap -layout us,cz -variant ,qwerty -option grp:alt_shift_toggle
 exec urxvtd
 exec numlockx
+exec nm-applet
 
 # Other
 focus_follows_mouse no
