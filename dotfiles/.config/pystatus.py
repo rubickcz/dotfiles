@@ -1,7 +1,7 @@
 import socket
 
 from i3pystatus import Status
-from i3pystatus.updates import pacman
+#from i3pystatus.updates import pacman
 from i3pystatus.weather import weathercom
 
 status = Status()
@@ -88,8 +88,10 @@ else:
 status.register(
     "network",
     interface=iface,
+    dynamic_color=False,
+    format_up="{v4}",
     color_up="#A0A0A0",
-    format_up="{v4}"
+    divisor=1024
 )
 
 # ping
@@ -112,12 +114,12 @@ status.register(
 #)
 
 # pacman updates
-status.register(
-    "updates",
-    format="  {count}",
-    backends = pacman.Pacman(),
-    color="#ffa99e"
-)
+#status.register(
+#    "updates",
+#    format="  {count}",
+#    backends = pacman.Pacman(),
+#    color="#ffa99e"
+#)
 
 # weather
 status.register(
