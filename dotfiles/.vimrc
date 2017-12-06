@@ -22,6 +22,9 @@ Plugin 'bitc/vim-bad-whitespace'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'hdima/python-syntax'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'fisadev/vim-isort'
+Plugin 'mileszs/ack.vim'
 
 " --> COLORS
 Plugin 'nanotech/jellybeans.vim'
@@ -259,3 +262,6 @@ let NERDTreeIgnore = ['\.pyc$','__pycache__$']
 " disable leader key bindings of buffer explorer
 silent! nunmap <leader>bv
 silent! nunmap <leader>bs
+
+" use python3 for isort
+let g:vim_isort_python_version = 'python3'
