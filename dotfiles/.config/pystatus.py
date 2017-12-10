@@ -24,11 +24,22 @@ status.register(
 # brightness
 status.register(
     "backlight",
-    format=" {percentage}%",
+    format="  {percentage}%",
     backlight="intel_backlight",
     on_upscroll=None,
     on_downscroll=None,
     interval=1
+)
+
+# battery
+status.register(
+    'battery',
+    format='  {percentage:.0f}%[ {consumption:.2f}W][ ({remaining})]',
+    not_present_text="No battery",
+    alert=True,
+    alert_percentage=15,
+    color="#ffc700",
+    interval=5,
 )
 
 # audio pre-amp
