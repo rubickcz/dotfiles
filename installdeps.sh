@@ -5,7 +5,7 @@
 # Installs dependendies
 
 # Install official pakcages
-sudo pacman -Sy --needed  ack alsa-utils autocutsel base-devel bash bash-completion chromium feh freetype2 dina-font dmenu dunst gnupg gsimplecal gtk-engines gvim i3 libnotify mc numlockx pass polkit python-isort python-netifaces python-psutil python-virtualenvwrapper rxvt-unicode ttf-dejavu udevil xorg xorg-xinit xorg-xinput xorg-xrandr xxkb wget
+sudo pacman -Sy --needed  ack alsa-utils autocutsel base-devel bash bash-completion chromium feh freetype2 dina-font dmenu dunst gnupg gsimplecal gtk-engines gvim i3 libnotify mc numlockx pass polkit python-isort python-netifaces python-psutil python-virtualenvwrapper rxvt-unicode ttf-font-awesome ttf-dejavu udevil xorg xorg-xinit xorg-xinput xorg-xrandr xxkb wget
 
 # Install Aurget
 cd /tmp
@@ -16,4 +16,4 @@ makepkg -f
 sudo pacman -U --needed *tar.xz
 
 # Install AUR packages
-aurget -S i3pystatus fbxkb python-colour python-pyalsaaudio ttf-font-awesome viber
+aurget -S i3pystatus fbxkb python-colour python-pyalsaaudio
