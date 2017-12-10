@@ -21,6 +21,16 @@ status.register(
     color_muted="#FFFF00"
 )
 
+# brightness
+status.register(
+    "backlight",
+    format=" {percentage}%",
+    backlight="intel_backlight",
+    on_upscroll=None,
+    on_downscroll=None,
+    interval=1
+)
+
 # audio pre-amp
 #status.register(
 #    "alsa",
