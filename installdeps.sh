@@ -5,7 +5,7 @@
 # Installs dependendies
 
 # Install official pakcages
-sudo pacman -Sy --needed  ack alsa-utils autocutsel base-devel bash bash-completion chromium ctags feh freetype2 dina-font dmenu dunst gnupg gsimplecal gtk-engines gvim htop i3 libnotify mc networkmanager network-manager-applet numlockx pass polkit python-isort python-netifaces python-psutil python-virtualenvwrapper rxvt-unicode ttf-font-awesome ttf-dejavu udevil xorg xorg-xinit xorg-xinput xorg-xrandr xxkb wget
+sudo pacman -Sy --needed  ack alsa-utils autocutsel base-devel bash bash-completion chromium ctags feh freetype2 dina-font dmenu dunst gnupg gsimplecal gtk-engines gvim htop i3 libnotify mc network-manager-applet numlockx pass polkit python-isort python-netifaces python-psutil python-virtualenvwrapper rxvt-unicode ttf-font-awesome ttf-dejavu udevil xorg xorg-xinit xorg-xinput xorg-xrandr xxkb wget
 
 # Install Aurget
 cd /tmp
@@ -17,6 +17,3 @@ sudo pacman -U --needed *tar.xz
 
 # Install AUR packages
 aurget -S i3pystatus fbxkb python-colour python-pyalsaaudio
-
-# Enable network manager
-sudo systemctl enable NetworkManager
