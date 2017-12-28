@@ -26,25 +26,16 @@ Here's a quick look what you get after installation (click to full size):
 <sup>2</sup> xxkb is currently not used, see https://github.com/rubickcz/dotfiles/issues/3
 
 ## Prerequisites
-It is assumed you have the base Arch Linux system is installed (follow [installation guide](https://wiki.archlinux.org/index.php/Installation_guide)). There's no need to install Xorg or any desktop environment, as it will be installed during dotfiles setup. The only thing you should do is to create a normal user and make sure `sudo` command works.
+It is assumed you have the base Arch Linux system installed (follow [installation guide](https://wiki.archlinux.org/index.php/Installation_guide)). There's no need to install Xorg or any desktop environment, as it will be installed during dotfiles setup. The only thing you should do is to create a normal user and make sure `sudo` command works.
 
 ## Installation
-
-It is assumed you have installed the base Arch Linux system (. 
-
 1. Clone the repository
 ```
 $ git clone https://github.com/rubickcz/dotfiles.git && cd dotfiles
 ```
-2. Execute `installdeps.sh` to install dependencies
+2. Execute `setup.sh` and follow instructions.
 ```
-$ ./installdeps.sh
-```
-3. Install my [scripts](https://github.com/rubickcz/scripts)
-
-4. Execute `makesymlinks.sh` to backup any existing config files in your home directory and replace them with symlinks to config files in this repository
-```
-$ ./makesymlinks.sh
+$ ./setup.sh
 ```
 
 ## Post install
