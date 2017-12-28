@@ -57,6 +57,11 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ondra ALL=(ALL) NOPASSWD: /usr/bin/hdparm
 ```
 
+## Troubleshooting
+
+### X.org does not start
+This is most likely caused by some issue with video driver. Make sure drivers for your GPU are installed.
+
 ## Note
 
 Some config files contain hardware dependent options for specific machines. A machine is recognized by its hostname. Currently, I have following machines:
