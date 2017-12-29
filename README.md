@@ -40,13 +40,8 @@ $ ./setup.sh
 
 ## Post install
 
-1. Install [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
-```
-$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
-2. Launch `vim` and issue `:PluginInstall` command
-3. Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`
-4. Add private stuff (not included in this repo):
+1. Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`
+2. Add private stuff (not included in this repo):
     * SSH and PGP keys
     * Encrypted password store
     * `.bashrc_private` file with custom aliases
