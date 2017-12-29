@@ -67,7 +67,7 @@ If you are not satisfied with mouse behavior, you can customize it in `~/.xinitr
 
 
 ## Post install (machine specific)
-Following steps are for a specific machines only.
+Following steps are for specific machines only.
 #### Marshadow
 Enable `hdparm` command to be launched via sudo without password by adding this line via `visudo`:
 ```
