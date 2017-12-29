@@ -28,7 +28,7 @@ Some config files contain hardware dependent options for specific machines. A ma
 * **marshadow** - Dell E6400
 * **guzzlord** - Acer Aspire 5
 
-## Prerequisites
+## Pre install
 It is assumed you have the base Arch Linux system installed (follow [installation guide](https://wiki.archlinux.org/index.php/Installation_guide)). There's no need to install Xorg or any desktop environment, as it will be installed during dotfiles setup. You should only be logged in as a normal user and make sure `sudo` command works.
 
 ## Installation
