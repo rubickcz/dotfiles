@@ -29,11 +29,11 @@ Here's a quick look what you get after installation (click to full size):
 It is assumed you have the base Arch Linux system installed (follow [installation guide](https://wiki.archlinux.org/index.php/Installation_guide)). There's no need to install Xorg or any desktop environment, as it will be installed during dotfiles setup. You should only be logged in as a normal user and make sure `sudo` command works.
 
 ## Installation
-1. Clone the repository
+1. Clone the repository:
 ```
 $ git clone https://github.com/rubickcz/dotfiles.git && cd dotfiles
 ```
-2. Execute `setup.sh` and follow instructions.
+2. Execute `setup.sh` and follow instructions:
 ```
 $ ./setup.sh
 ```
@@ -45,7 +45,7 @@ Following steps were not automated by a script, because it is easier/more conven
 Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`, it will be set at startup.
 
 ### SSH keys
-Copy your SSH keys to `~/.ssh`
+Copy your SSH keys to `~/.ssh`.
 
 ### GPG keys
 Import your keys to GnuPG:
@@ -62,7 +62,7 @@ git clone <repo_url> ~/.password_store
 ### Marshadow specific
 1. Enable `hdparm` command to be launched via sudo without password by adding this line via `visudo`:
 ```
-ondra ALL=(ALL) NOPASSWD: /usr/bin/hdparm
+username ALL=(ALL) NOPASSWD: /usr/bin/hdparm
 ```
 
 ## Troubleshooting
