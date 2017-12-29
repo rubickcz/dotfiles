@@ -57,13 +57,15 @@ $ gpg --import /path/to/secret.key
 ```
 
 ### Encrypted password store
-I am using `pass` utility to manage my passwords, with encrypted passwords stored in a private git repo:
+`pass` utility is used to manage passwords, encrypted passwords can be fetched from a private git repo:
 ```
 git clone <repo_url> ~/.password_store
 ```
-    
-### Marshadow specific
-1. Enable `hdparm` command to be launched via sudo without password by adding this line via `visudo`:
+
+## Post install (machine specific)
+Following steps are for a specific machines only.
+### Marshadow
+Enable `hdparm` command to be launched via sudo without password by adding this line via `visudo`:
 ```
 username ALL=(ALL) NOPASSWD: /usr/bin/hdparm
 ```
