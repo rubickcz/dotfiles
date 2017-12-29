@@ -25,6 +25,11 @@ Here's a quick look what you get after installation (click to full size):
 
 <sup>2</sup> xxkb is currently not used, see https://github.com/rubickcz/dotfiles/issues/3
 
+Some config files contain hardware dependent options for specific machines. A machine is recognized by its hostname. Currently, dotfiles are running on the following machines:
+* **golem** - Desktop PC
+* **marshadow** - Dell E6400
+* **guzzlord** - Acer Aspire 5
+
 ## Prerequisites
 It is assumed you have the base Arch Linux system installed (follow [installation guide](https://wiki.archlinux.org/index.php/Installation_guide)). There's no need to install Xorg or any desktop environment, as it will be installed during dotfiles setup. You should only be logged in as a normal user and make sure `sudo` command works.
 
@@ -70,8 +75,4 @@ username ALL=(ALL) NOPASSWD: /usr/bin/hdparm
 ### X.org does not start
 This is most likely caused by some issue with video driver. Make sure drivers for your GPU are installed.
 
-## Note
 
-Some config files contain hardware dependent options for specific machines. A machine is recognized by its hostname. Currently, I have following machines:
-* **golem** - Desktop PC
-* **marshadow** - Dell laptop
