@@ -44,19 +44,19 @@ $ ./setup.sh
 ## Post install
 Following steps were not automated by a script, because it is easier/more convenient to do them by hand.
 
-### Wallpaper
+#### Wallpaper
 Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`, it will be set at startup.
 
-### SSH keys
+#### SSH keys
 Copy your SSH keys to `~/.ssh`.
 
-### GPG keys
+#### GPG keys
 Import your keys to GnuPG:
 ```
 $ gpg --import /path/to/secret.key
 ```
 
-### Encrypted password store
+#### Encrypted password store
 `pass` utility is used to manage passwords, encrypted passwords can be fetched from a private git repo:
 ```
 git clone <repo_url> ~/.password_store
@@ -64,7 +64,7 @@ git clone <repo_url> ~/.password_store
 
 ## Post install (machine specific)
 Following steps are for a specific machines only.
-### Marshadow
+#### Marshadow
 Enable `hdparm` command to be launched via sudo without password by adding this line via `visudo`:
 ```
 username ALL=(ALL) NOPASSWD: /usr/bin/hdparm
@@ -72,7 +72,7 @@ username ALL=(ALL) NOPASSWD: /usr/bin/hdparm
 
 ## Troubleshooting
 
-### X.org does not start
+#### X.org does not start
 This is most likely caused by some issue with video driver. Make sure drivers for your GPU are installed.
 
 
