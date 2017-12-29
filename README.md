@@ -62,6 +62,10 @@ $ gpg --import /path/to/secret.key
 git clone <repo_url> ~/.password_store
 ```
 
+#### Mouse/touchpad settings
+If you are not satisfied with mouse behavior, you can customize it for your machine in `~/.xinitrc` file.
+
+
 ## Post install (machine specific)
 Following steps are for a specific machines only.
 #### Marshadow
