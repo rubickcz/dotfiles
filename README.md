@@ -63,7 +63,7 @@ git clone <repo_url> ~/.password_store
 ```
 
 #### Mouse/touchpad settings
-If you are not satisfied with mouse behavior, you can customize it for your machine in `~/.xinitrc` and `~/.imwheelrc` files.
+If you are not satisfied with mouse behavior, you can customize it in `~/.xinitrc` and `~/.imwheelrc` files.
 
 
 ## Post install (machine specific)
