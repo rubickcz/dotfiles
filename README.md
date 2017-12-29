@@ -39,12 +39,25 @@ $ ./setup.sh
 ```
 
 ## Post install
+Following steps were not automated by a script, because it is easier/more convenient to do them by hand.
 
-1. Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`
-2. Add private stuff (not included in this repo):
-    * SSH and PGP keys
-    * Encrypted password store
-    * `.bashrc_private` file with custom aliases
+### Wallpaper
+Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`, it will be set at startup.
+
+### SSH keys
+Copy your SSH keys to `~/.ssh`
+
+### GPG keys
+Import your keys to GnuPG:
+```
+$ gpg --import /path/to/secret.key
+```
+
+### Encrypted password store
+I am using `pass` utility to manage my passwords, with encrypted passwords stored in a private git repo:
+```
+git clone <repo_url> ~/.password_store
+```
     
 ### Marshadow specific
 1. Enable `hdparm` command to be launched via sudo without password by adding this line via `visudo`:
