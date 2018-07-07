@@ -19,7 +19,7 @@ set $mod Mod4
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 #font pango:DejaVu Sans Mono 10
-font pango:Dina 8
+font pango:dina 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -89,8 +89,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # set default workspaces for monitors
-workspace 1:term output HDMI1
-workspace 9 output DP1
+#workspace 1:term output HDMI1
+#workspace 9 output DP1
 
 # switch to workspace
 bindsym $mod+1 workspace 1:term
@@ -192,7 +192,7 @@ bindsym $mod+c exec gsimplecal
 bindsym $mod+m exec monitor-toggle.sh
 
 # Open password store menu
-bindsym $mod+p exec passmenu -b -p "PASSWORD STORE:"
+bindsym $mod+p exec passmenu --type -b -p "PASSWORD STORE:"
 
 # Suspend
 bindsym $mod+Pause exec "i3lock -c 000000;systemctl suspend"
@@ -211,6 +211,7 @@ exec setxkbmap -layout us,cz -variant ,qwerty -option grp:alt_shift_toggle
 exec urxvtd
 exec numlockx
 exec nm-applet
+exec imwheel
 
 # Other
 focus_follows_mouse no
