@@ -8,7 +8,7 @@ URxvt.inheritPixmap: true
 URxvt.scrollBar: false
 
 ! Font
-urxvt.font: xft:dina:pixelsize=10
+urxvt.font: xft:DejavuSansMono:pixelsize=16
 
 ! Disable strange Ctrl+Shift modes
 URxvt.iso14755: false
