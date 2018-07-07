@@ -38,10 +38,6 @@ fi
 # Custom stuff
 ###############################################
 
-# copy data between xorg's primary and clipboard selections
-autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
-
 # start devmon here, not via systemd (notify-send was not working)
 devmon \
 --exec-on-drive "notify-send \"Automount\" \"Device %f has been mounted as %l.\"" \
@@ -78,6 +74,17 @@ if [ "$HOSTNAME" = marshadow ]; then
     sudo hdparm -B 254 /dev/sda
 fi
 
+if [ "$HOSTNAME" = guzzlord ]; then
+    # touchpad configuration
+    xinput set-prop "SYNA7DB5:01 06CB:7DB7 Touchpad" "libinput Tapping Enabled" 1
+    xinput set-prop "SYNA7DB5:01 06CB:7DB7 Touchpad" "libinput Accel Speed" 0.5
+
+    # Connect IT CI-1225 mouse configuration
+    xinput set-prop "2.4G Wireless Optical Mouse" "libinput Accel Speed" 0.2
+
+    xrandr --setprovideroutputsource modesetting NVIDIA-0
+    xrandr --auto
+fi
 
 ###############################################
 # Start window manager
