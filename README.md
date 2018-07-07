@@ -18,51 +18,65 @@ Here's a quick look what you get after installation (click to full size):
 | [midnight commander](https://www.archlinux.org/packages/community/x86_64/mc/)  | file manager | [`.config/mc/`](https://github.com/rubickcz/dotfiles/tree/master/dotfiles/.config/mc)  |
 | [Qt4](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | widget toolkit | [`.config/Trolltech.conf`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.config/Trolltech.conf) |
 | [X.org](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | display server | [`.config/user-dirs.dirs`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.config/user-dirs.dirs)<br>[`.local/share/applications/mimeapps.list`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.local/share/applications/mimeapps.list)<br>[`.xinitrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.xinitrc)  |
-| [xxkb](https://www.archlinux.org/packages/community/x86_64/xxkb/)<sup>2</sup> | keyboard layout indicator |[`.xxkb/`](https://github.com/rubickcz/dotfiles/tree/master/dotfiles/.xxkb)<br>[`.xxkbrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.xxkbrc)  |
+| [xxkb](https://www.archlinux.org/packages/community/x86_64/xxkb/) | keyboard layout indicator |[`.xxkb/`](https://github.com/rubickcz/dotfiles/tree/master/dotfiles/.xxkb)<br>[`.xxkbrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.xxkbrc)  |
 | [rxvt-unicode](https://www.archlinux.org/packages/community/x86_64/rxvt-unicode/) | terminal emulator | [`.Xdefaults`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.Xdefaults) |
 | [bash](https://www.archlinux.org/packages/core/x86_64/bash/) | unix shell | [`.bash_profile`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.bash_profile)<br>[`.bashrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.bashrc)  |
 | [vim](https://www.archlinux.org/packages/extra/x86_64/gvim/)  | text editor | [`.vimrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.vimrc) |
 
-<sup>2</sup> xxkb is currently not used, see https://github.com/rubickcz/dotfiles/issues/3
+Some config files contain hardware dependent options for specific machines. A machine is recognized by its hostname. Currently, dotfiles are running on the following machines:
+* **golem** - Desktop PC
+* **marshadow** - Dell E6400
+* **guzzlord** - Acer Aspire 5
+
+## Pre install
+It is assumed you have the base Arch Linux system installed (follow [installation guide](https://wiki.archlinux.org/index.php/Installation_guide)). There's no need to install Xorg or any desktop environment, as it will be installed during dotfiles setup. You should only be logged in as a normal user and make sure `sudo` command works.
 
 ## Installation
-
-1. Clone the repository
+1. Clone the repository:
 ```
 $ git clone https://github.com/rubickcz/dotfiles.git && cd dotfiles
 ```
-2. Execute `installdeps.sh` to install dependencies
+2. Execute `setup.sh` and follow instructions:
 ```
-$ ./installdeps.sh
-```
-3. Install my [scripts](https://github.com/rubickcz/scripts)
-
-4. Execute `makesymlinks.sh` to backup any existing config files in your home directory and replace them with symlinks to config files in this repository
-```
-$ ./makesymlinks.sh
+$ ./setup.sh
 ```
 
 ## Post install
+Following steps were not automated by a script, because it is easier/more convenient to do them by hand.
 
-1. Install [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
+#### Wallpaper
+Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`, it will be set at startup.
+
+#### SSH keys
+Copy your SSH keys to `~/.ssh`.
+
+#### GPG keys
+Import your keys to GnuPG:
 ```
-$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
-2. Launch `vim` and issue `:PluginInstall` command
-3. Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`
-4. Add private stuff (not included in this repo):
-    * SSH and PGP keys
-    * Encrypted password store
-    * `.bashrc_private` file with custom aliases
-    
-### Marshadow specific
-1. Enable `hdparm` command to be launched via sudo without password by adding this line via `visudo`:
-```
-ondra ALL=(ALL) NOPASSWD: /usr/bin/hdparm
+$ gpg --import /path/to/secret.key
 ```
 
-## Note
+#### Encrypted password store
+`pass` utility is used to manage passwords, encrypted passwords can be fetched from a private git repo:
+```
+git clone <repo_url> ~/.password_store
+```
 
-Some config files contain hardware dependent options for specific machines. A machine is recognized by its hostname. Currently, I have following machines:
-* **golem** - Desktop PC
-* **marshadow** - Dell laptop
+#### Mouse/touchpad settings
+If you are not satisfied with mouse behavior, you can customize it in `~/.xinitrc` and `~/.imwheelrc` files.
+
+
+## Post install (machine specific)
+Following steps are for specific machines only.
+#### Marshadow
+Enable `hdparm` command to be launched via sudo without password by adding this line via `visudo`:
+```
+username ALL=(ALL) NOPASSWD: /usr/bin/hdparm
+```
+
+## Troubleshooting
+
+#### X.org does not start
+This is most likely caused by some issue with video driver. Make sure drivers for your GPU are installed.
+
+
