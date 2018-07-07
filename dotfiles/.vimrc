@@ -25,6 +25,7 @@ Plugin 'hdima/python-syntax'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'fisadev/vim-isort'
 Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-commentary'
 
 " --> COLORS
 Plugin 'nanotech/jellybeans.vim'
@@ -56,7 +57,7 @@ set autoindent                 " Auto indent next line according to previous lin
 set backspace=indent,eol,start " Backspace setting
 set undofile                   " Remember undo tree even after unloading a buffer
 set undodir=$HOME/.vim/undo    " where to save undo tree
-
+set hidden                     " do not complain when buffer is not saved
 
 set timeout                    " Timeout settings for command sequences
 set timeoutlen=400
@@ -166,7 +167,7 @@ function SetPythonSettings()
     set tabstop=4
     set softtabstop=4
     set shiftwidth=4
-    set textwidth=100
+    set textwidth=120
     set expandtab
     set autoindent
     set fileformat=unix
@@ -255,6 +256,8 @@ let g:Tlist_Use_Right_Window=1
 let g:Tlist_Show_One_File = 1
 " Extensions for CtrlP
 let g:ctrlp_extensions = ['tag']
+" Dont limit number of file
+let g:ctrlp_max_files=0
 
 " ignore puthon pyc files
 let NERDTreeIgnore = ['\.pyc$','__pycache__$']
@@ -265,3 +268,5 @@ silent! nunmap <leader>bs
 
 " use python3 for isort
 let g:vim_isort_python_version = 'python3'
+
+" Todo ignore pyc and other generated files
