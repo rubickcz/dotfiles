@@ -17,14 +17,14 @@ status.register(
 # audio volume
 status.register(
     "alsa",
-    format="  {volume}%",
+    format="\u3000 {volume}%",
     color_muted="#FFFF00"
 )
 
 # brightness
 status.register(
     "backlight",
-    format="  {percentage}%",
+    format="\u3000 {percentage}%",
     backlight="intel_backlight",
     on_upscroll=None,
     on_downscroll=None,
@@ -34,10 +34,10 @@ status.register(
 # battery
 status.register(
     'battery',
-    format='  {percentage:.0f}%[ {consumption:.2f}W][ ({remaining})]',
+    format='\u3000 {percentage:.0f}%[ {consumption:.2f}W][ ({remaining})]',
     not_present_text="No battery",
     alert=True,
-    alert_percentage=15,
+    alert_percentage=5,
     color="#ffc700",
     interval=5,
 )
@@ -52,7 +52,7 @@ status.register(
 #    on_downscroll = ["decrease_volume", 20]
 #)
 
-if socket.gethostname() == 'golem':
+if socket.gethostname() in ['golem', 'guzzlord']:
     # for golem machine (desktop pc), use thermal zone #2
     tz = '2'
 else:
@@ -77,48 +77,28 @@ status.register(
 # load
 status.register(
     "load",
-    format="  {avg1}",
+    format="\uf0e7\u3000 {avg1}",
     color="#84daff"
 )
 
 # available RAM
 status.register(
     "mem",
-    format="  {percent_used_mem}%",
+    format="\u3000 {percent_used_mem}%",
     divisor=1024**3
 )
 
 # free disk space
 status.register("disk",
     path="/",
-    format="  {avail}G"
+    format="\u3000 {avail}G"
 )
 
-
-if socket.gethostname() == 'golem':
-    # golem machine (desktop pc)
-    iface = 'enp2s0'
-elif socket.gethostname() == 'marshadow':
-    # marshadow machine (laptop)
-    iface = 'enp0s25'
-else:
-    # other machines
-    iface = 'eth0'
-
-# network
-status.register(
-    "network",
-    interface=iface,
-    dynamic_color=False,
-    format_up="{v4}",
-    color_up="#A0A0A0",
-    divisor=1024
-)
 
 # ping
 status.register(
     "ping",
-    format="  {ping} ms",
+    format="\uF079\u3000 {ping} ms",
     format_down="unreachable",
     color="#1ad892"
 )
@@ -141,6 +121,7 @@ status.register(
 #    backends = pacman.Pacman(),
 #    color="#ffa99e"
 #)
+
 
 # weather
 status.register(
