@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# install_deps.sh
+# install_packages.sh
 # ===============
-# Installs dependendent packages.
+# Installs packages.
 
 source ./functions.sh
 
@@ -11,7 +11,7 @@ source ./functions.sh
 # ------------------------------------------------------------------------------
 
 # packages to be installed via pacman
-PACKAGES="ack alsa-utils base-devel bash bash-completion chromium ctags feh freetype2 dina-font dmenu dunst gnupg gsimplecal gtk-engines gvim htop i3 libnotify mc network-manager-applet networkmanager-openvpn ntfs-3g numlockx openssh pass polkit python-isort python-netifaces python-psutil python-virtualenvwrapper rxvt-unicode ttf-font-awesome ttf-dejavu udevil unrar xdg-user-dirs xdotool xf86-input-libinput xorg xorg-xinit xorg-xinput xorg-xrandr xxkb wget"
+PACKAGES="ack alsa-utils base-devel bash bash-completion cups chromium ctags feh freetype2 dina-font dmenu dunst gnupg gsimplecal gtk-engines gvim htop i3 libnotify mc network-manager-applet networkmanager-openvpn ntfs-3g ntp numlockx openssh pass polkit python-isort python-netifaces python-psutil python-virtualenvwrapper rxvt-unicode tk ttf-font-awesome ttf-dejavu udevil unrar vlc xdg-user-dirs xdotool xf86-input-libinput xorg xorg-xinit xorg-xinput xorg-xrandr xxkb wget"
 
 # packages to be installed via aurget
 AUR_PACKAGES="i3pystatus fbxkb imwheel python-colour python-pyalsaaudio"
@@ -81,5 +81,9 @@ if [ $? -ne 0 ]; then
     mkdir "$HOME/bin/"
     ln -s "$REPO_PATH" "$HOME/bin/"
 fi
+
+# Post install procedures
+sudo systemctl enable ntpd.service
+sudo systemctl enable org.cups.cupsd.service
 
 success "Done installing dependencies"

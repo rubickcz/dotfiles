@@ -13,9 +13,9 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "The setup has a few steps, you will be asked if you want to proceed or skip at each step."
 echo "If installing for the first time, you should go through all steps."
 
-yes_no_question "STEP #1: Do you want to install dependencies?"
+yes_no_question "STEP #1: Do you want to install packages?"
 if [ $? -eq 0 ]; then
-    ./install_deps.sh
+    ./install_packages.sh
     if [ $? -ne 0 ]; then
         exit $?
     fi
