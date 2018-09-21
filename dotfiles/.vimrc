@@ -128,6 +128,9 @@ imap <C-@> <C-Space>
 map j gj
 map k gk
 
+" expand current buffer path (us in cmd line)
+cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 "=========================================================================
 " Abbreviations (type in insert mode and press space)
 "=========================================================================

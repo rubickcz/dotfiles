@@ -11,10 +11,13 @@ source ./functions.sh
 # ------------------------------------------------------------------------------
 
 # packages to be installed via pacman
-PACKAGES="ack alsa-utils base-devel bash bash-completion cups chromium ctags feh freetype2 dina-font dmenu dunst gnupg gsimplecal gtk-engines gvim htop i3 libnotify mc network-manager-applet networkmanager-openvpn ntfs-3g ntp numlockx nvm openssh pass polkit python-isort python-netifaces python-psutil python-virtualenvwrapper rxvt-unicode tk ttf-font-awesome ttf-dejavu udevil unrar vlc xdg-user-dirs xdotool xf86-input-libinput xorg xorg-xinit xorg-xinput xorg-xrandr xxkb wget"
+PACKAGES="ack alsa-utils audacity base-devel bash bash-completion cups chromium ctags feh freetype2 dina-font dmenu dnsutils dunst evince gimp gnupg gsimplecal gtk-engines gvim htop i3 inkscape libnotify mc network-manager-applet networkmanager-openvpn ntfs-3g ntp numlockx nvm openssh pass polkit python-isort python-jedi python-netifaces python-psutil python-virtualenvwrapper rxvt-unicode tk ttf-font-awesome ttf-dejavu udevil unrar unzip vlc xdg-user-dirs xdotool xf86-input-libinput xorg xorg-xinit xorg-xinput xorg-xrandr xxkb wget zip"
+
+# TODO: separate necessary dependencies and nice to have programs like vlc, gimp, etc
+# transmission-gtk audacity
 
 # packages to be installed via aurget
-AUR_PACKAGES="i3pystatus fbxkb imwheel python-colour python-pyalsaaudio"
+AUR_PACKAGES="i3pystatus betaflight-configurator fbxkb imwheel python-colour python-pyalsaaudio"
 
 # rubick's scripts repo url
 SCRIPTS_REPO_URL="https://github.com/rubickcz/scripts"
