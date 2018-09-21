@@ -1,14 +1,13 @@
-! Trasnparency
+! No Trasnparency
 URxvt.transparent: true
 URxvt.shading: 0
-!URxvt.tintColor: black
 URxvt.inheritPixmap: true
 
 ! No scrollbar
 URxvt.scrollBar: false
 
 ! Font
-urxvt.font: xft:DejavuSansMono:pixelsize=16
+URxvt.font: xft:DejavuSansMono:pixelsize=16
 
 ! Disable strange Ctrl+Shift modes
 URxvt.iso14755: false
