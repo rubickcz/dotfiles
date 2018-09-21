@@ -24,10 +24,11 @@ Here's a quick look what you get after installation (click to full size):
 | [bash](https://www.archlinux.org/packages/core/x86_64/bash/) | unix shell | [`.bash_profile`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.bash_profile)<br>[`.bashrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.bashrc)  |
 | [vim](https://www.archlinux.org/packages/extra/x86_64/gvim/)  | text editor | [`.vimrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.vimrc) |
 
-Some config files contain hardware dependent options for specific machines. A machine is recognized by its hostname. Currently, dotfiles are running on the following machines:
+`~/.xinitrc` contains hardware dependent options for specific machines. A machine is recognized by its hostname. This is a list of machines I've been using my dotfiles on (I might not be using all of them, but I decided to keep the configs):
 * **golem** - Desktop PC
 * **marshadow** - Dell E6400
 * **guzzlord** - Acer Aspire 5
+* **lumineon** - Thinkpad X220
 
 ## Pre install
 It is assumed you have the base Arch Linux system installed (follow [installation guide](https://wiki.archlinux.org/index.php/Installation_guide)). There's no need to install Xorg or any desktop environment, as it will be installed during dotfiles setup. You should only be logged in as a normal user and make sure `sudo` command works.
@@ -63,13 +64,13 @@ $ gpg --import /path/to/secret.key
 ```
 git clone <repo_url> ~/.password_store
 ```
-TODO: bash private
-#### Mouse/touchpad settings
-If you are not satisfied with mouse behavior, you can customize it in `~/.xinitrc`.
+
+#### Private .bashrc
+You can add/copy your private aliases and settings to `~/.private_bashrc`.
 
 
 ## Post install (machine specific)
-Following steps are for specific machines only.
+Following steps are for my specific machines only.
 #### Marshadow
 Enable `hdparm` command to be launched via sudo without password by adding this line via `visudo`:
 ```
