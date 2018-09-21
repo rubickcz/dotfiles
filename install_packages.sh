@@ -17,7 +17,7 @@ PACKAGES="ack alsa-utils base-devel bash bash-completion cups chromium ctags feh
 APP_PACKAGES="audacity evince gimp inkscape transmission-gtk vlc"
 
 # packages to be installed via aurget
-AUR_PACKAGES="i3pystatus betaflight-configurator fbxkb imwheel python-colour python-pyalsaaudio"
+AUR_PACKAGES="i3pystatus betaflight-configurator fbxkb python-colour python-pyalsaaudio"
 
 # rubick's scripts repo url
 SCRIPTS_REPO_URL="https://github.com/rubickcz/scripts"
