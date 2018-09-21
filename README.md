@@ -47,8 +47,9 @@ Following steps were not automated by a script, because it is easier/more conven
 #### Wallpaper
 Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`, it will be set at startup.
 
-#### SSH keys
-Copy your SSH keys to `~/.ssh`.
+#### SSH
+* Copy your SSH keys to `~/.ssh`
+* Copy your private host settings to `~/.ssh/hosts`
 
 #### GPG keys
 Import your keys to GnuPG:
