@@ -63,7 +63,7 @@ $ gpg --import /path/to/secret.key
 ```
 git clone <repo_url> ~/.password_store
 ```
-
+TODO: bash private
 #### Mouse/touchpad settings
 If you are not satisfied with mouse behavior, you can customize it in `~/.xinitrc` and `~/.imwheelrc` files.
 
