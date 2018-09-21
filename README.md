@@ -16,6 +16,7 @@ Here's a quick look what you get after installation (click to full size):
 | [i3pystatus](https://aur.archlinux.org/packages/i3pystatus/)  | i3status replacement | [`.config/pystatus.py`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.config/pystatus.py) |
 | [GTK+](https://www.archlinux.org/packages/extra/x86_64/gtk2/)  | widget-toolkit | [`.gtkrc-2.0`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.gtkrc-2.0) |
 | [midnight commander](https://www.archlinux.org/packages/community/x86_64/mc/)  | file manager | [`.config/mc/`](https://github.com/rubickcz/dotfiles/tree/master/dotfiles/.config/mc)  |
+| [OpenSSH](https://www.archlinux.org/packages/core/x86_64/openssh/)  | secure shell | [`.ssh/config`](https://github.com/rubickcz/dotfiles/tree/master/dotfiles/.ssh/config)  |
 | [Qt4](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | widget toolkit | [`.config/Trolltech.conf`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.config/Trolltech.conf) |
 | [X.org](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | display server | [`.config/user-dirs.dirs`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.config/user-dirs.dirs)<br>[`.local/share/applications/mimeapps.list`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.local/share/applications/mimeapps.list)<br>[`.xinitrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.xinitrc)  |
 | [xxkb](https://www.archlinux.org/packages/community/x86_64/xxkb/) | keyboard layout indicator |[`.xxkb/`](https://github.com/rubickcz/dotfiles/tree/master/dotfiles/.xxkb)<br>[`.xxkbrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.xxkbrc)  |
@@ -47,8 +48,9 @@ Following steps were not automated by a script, because it is easier/more conven
 #### Wallpaper
 Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`, it will be set at startup.
 
-#### SSH keys
-Copy your SSH keys to `~/.ssh`.
+#### SSH
+* Copy your SSH keys to `~/.ssh`
+* Copy your private host settings to `~/.ssh/hosts`
 
 #### GPG keys
 Import your keys to GnuPG:
@@ -61,7 +63,7 @@ $ gpg --import /path/to/secret.key
 ```
 git clone <repo_url> ~/.password_store
 ```
-
+TODO: bash private
 #### Mouse/touchpad settings
 If you are not satisfied with mouse behavior, you can customize it in `~/.xinitrc`.
 
