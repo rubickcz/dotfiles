@@ -51,4 +51,4 @@
 
 [play_sound]
      summary = "*"
-     script = /home/ondra/projects/scripts/alert.sh
+     script = alert.sh

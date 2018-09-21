@@ -29,9 +29,6 @@ mkdir -p $BACKUP_DIR
 echo "Moving existing dotfiles to the backup directory and creating symlinks:"
 for FILE in `find dotfiles/ -type f`; do
 
-    STATUS="OK"
-    MESSAGE=""
-
     # remove "dotfiles/" part from $FILE and glue it with $HOME
     HOMEFILE="$HOME/${FILE#*/}"
     HOMEFILEPATH=`dirname $HOMEFILE`
