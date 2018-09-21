@@ -105,6 +105,3 @@ fi
 export WORKON_HOME=$HOME/other/venvs
 export PROJECT_HOME=$HOME/projects
 source /usr/bin/virtualenvwrapper.sh
-
-#nvm
-source /usr/share/nvm/init-nvm.sh
