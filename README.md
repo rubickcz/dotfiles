@@ -42,6 +42,7 @@ $ git clone https://github.com/rubickcz/dotfiles.git && cd dotfiles
 ```
 $ ./setup.sh
 ```
+3. Log out and in again to load X.org and i3 window manager.
 
 ## Post install
 Following steps were not automated by a script, because it is easier/more convenient to do them by hand.
