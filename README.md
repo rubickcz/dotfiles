@@ -63,7 +63,7 @@ $ gpg --import /path/to/secret.key
 #### Encrypted password store
 `pass` utility is used to manage passwords, encrypted passwords can be fetched from a private git repo:
 ```
-git clone <repo_url> ~/.password_store
+git clone <repo_url> ~/.password-store
 ```
 
 #### Private .bashrc
