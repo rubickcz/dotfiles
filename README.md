@@ -42,6 +42,7 @@ $ git clone https://github.com/rubickcz/dotfiles.git && cd dotfiles
 ```
 $ ./setup.sh
 ```
+3. Log out and in again to load X.org and i3 window manager.
 
 ## Post install
 Following steps were not automated by a script, because it is easier/more convenient to do them by hand.
@@ -62,7 +63,7 @@ $ gpg --import /path/to/secret.key
 #### Encrypted password store
 `pass` utility is used to manage passwords, encrypted passwords can be fetched from a private git repo:
 ```
-git clone <repo_url> ~/.password_store
+git clone <repo_url> ~/.password-store
 ```
 
 #### Private .bashrc
