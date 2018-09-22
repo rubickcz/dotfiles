@@ -86,6 +86,11 @@ if [ "$HOSTNAME" = guzzlord ]; then
     xrandr --auto
 fi
 
+if [ "$HOSTNAME" = lumineon ]; then
+    # touchpad configuration
+    xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+fi
+
 ###############################################
 # Start window manager
 ###############################################
