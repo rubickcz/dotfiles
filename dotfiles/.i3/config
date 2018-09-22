@@ -120,8 +120,8 @@ bindsym XF86AudioRaiseVolume exec amixer sset Master 2%+
 bindsym XF86AudioMute exec amixer sset Master toggle
 
 # Brightness control
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
 # Start Chromium and switch to workspace #2
 bindsym $mod+b exec chromium; workspace 2:web
