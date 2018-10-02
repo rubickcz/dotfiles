@@ -161,3 +161,7 @@ exec nm-applet
 focus_follows_mouse no
 for_window [class="Chromium"] border none
 for_window [class="Gsimplecal"] border none floating enable move absolute position 1700px 30px # this works nice only on FullHD display :(
+
+# Spotify control (next/previous track)
+bindsym $mod+XF86Forward exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym $mod+XF86Back exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
