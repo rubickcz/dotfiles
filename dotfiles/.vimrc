@@ -26,6 +26,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'fisadev/vim-isort'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-commentary'
+Plugin 'tell-k/vim-autoflake'
 
 " --> COLORS
 Plugin 'nanotech/jellybeans.vim'
@@ -216,6 +217,7 @@ au BufNewFile,BufRead *.js call SetPythonSettings()
 au BufNewFile,BufRead *.html call SetHTMLSettings()
 au BufNewFile,BufRead *.css call SetCSSSettings()
 au BufNewFile,BufRead *.less call SetCSSSettings()
+au BufNewFile,BufRead *.yml call SetHTMLSettings()
 
 " Don't open doc string window when using completion
 autocmd FileType python setlocal completeopt-=preview
@@ -230,6 +232,11 @@ if version >= 700
   au InsertEnter * hi StatusLine ctermbg=22
   au InsertLeave * hi StatusLine ctermbg=24
 endif
+
+" show text width visually
+set colorcolumn=+1
+highlight ColorColumn ctermbg=235
+
 
 " Disable arrow keys to learn the Vim way
 map <up> <nop>

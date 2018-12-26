@@ -11,13 +11,13 @@ source ./functions.sh
 # ------------------------------------------------------------------------------
 
 # packages to be installed via pacman
-PACKAGES="ack alsa-utils base-devel bash bash-completion cups chromium ctags feh freetype2 dina-font dmenu dnsutils dunst gnupg gsimplecal gtk-engines gvim htop i3 libnotify mc network-manager-applet networkmanager-openvpn ntfs-3g ntp numlockx openssh pass polkit python-colour python-isort python-jedi python-netifaces python-psutil python-virtualenvwrapper rxvt-unicode tk ttf-font-awesome ttf-dejavu udevil unrar unzip xdg-user-dirs xdotool xf86-input-libinput xorg xorg-xinit xorg-xinput xorg-xrandr xxkb wget zip"
+PACKAGES="ack alsa-utils base-devel bash bash-completion blueman bluez-utils cups chromium ctags feh freetype2 dina-font dmenu dnsutils dunst gnupg gsimplecal gtk-engines gvim htop i3 libnotify mc network-manager-applet networkmanager-openvpn noto-font-emoji ntfs-3g ntp numlockx openssh pass pavucontrol polkit pulsaudio pulseaudio-alsa pulseaudio-bluetooth python-colour python-isort python-jedi python-netifaces python-psutil python-virtualenvwrapper rxvt-unicode tk ttf-font-awesome ttf-dejavu udevil unrar unzip xdg-user-dirs xdotool xf86-input-libinput xorg xorg-xinit xorg-xinput xorg-xrandr xxkb wget zip"
 
 # common apps
 APP_PACKAGES="audacity evince gimp inkscape transmission-gtk vlc"
 
 # packages to be installed via aurget
-AUR_PACKAGES="i3pystatus fbxkb python-pyalsaaudio"
+AUR_PACKAGES="i3pystatus fbxkb python-autoflake python-pyalsaaudio"
 
 # rubick's scripts repo url
 SCRIPTS_REPO_URL="https://github.com/rubickcz/scripts"
@@ -88,5 +88,6 @@ fi
 # Post install procedures
 sudo systemctl enable ntpd.service
 sudo systemctl enable org.cups.cupsd.service
+sudo systemctl enable bluetooth.service
 
 success "Done installing dependencies"

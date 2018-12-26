@@ -16,7 +16,7 @@ status.register(
 
 # audio volume
 status.register(
-    "alsa",
+    "pulseaudio",
     format="\u3000 {volume}%",
     color_muted="#FFFF00"
 )

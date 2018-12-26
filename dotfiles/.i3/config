@@ -51,8 +51,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # set default workspaces for monitors
-#workspace 1:term output HDMI1
-#workspace 9 output DP1
+workspace 1:term output HDMI3
+workspace 9 output VGA1
 
 # switch to workspace
 bindsym $mod+1 workspace 1:term
@@ -117,7 +117,7 @@ bindsym $mod+0 workspace back_and_forth
 # Volume contol
 bindsym XF86AudioLowerVolume exec amixer sset Master 2%-
 bindsym XF86AudioRaiseVolume exec amixer sset Master 2%+
-bindsym XF86AudioMute exec amixer sset Master toggle
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
 
 # Brightness control
 # bindsym XF86MonBrightnessDown exec xbacklight -dec 10
@@ -156,6 +156,7 @@ exec setxkbmap -layout us,cz -variant ,qwerty -option grp:alt_shift_toggle
 exec urxvtd
 exec numlockx
 exec nm-applet
+exec blueman-applet
 
 # Other
 focus_follows_mouse no
@@ -163,5 +164,5 @@ for_window [class="Chromium"] border none
 for_window [class="Gsimplecal"] border none floating enable move absolute position 1700px 30px # this works nice only on FullHD display :(
 
 # Spotify control (next/previous track)
-bindsym $mod+XF86Forward exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-bindsym $mod+XF86Back exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindsym $mod+Right exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym $mod+Left exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
