@@ -157,6 +157,7 @@ exec urxvtd
 exec numlockx
 exec nm-applet
 exec blueman-applet
+exec monitor-toggle.sh
 
 # Other
 focus_follows_mouse no
