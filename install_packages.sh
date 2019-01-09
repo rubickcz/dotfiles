@@ -17,7 +17,7 @@ PACKAGES="ack alsa-utils base-devel bash bash-completion blueman bluez-utils cup
 APP_PACKAGES="audacity evince gimp inkscape transmission-gtk vlc"
 
 # packages to be installed via aurget
-AUR_PACKAGES="i3pystatus fbxkb python-autoflake python-pyalsaaudio"
+AUR_PACKAGES="i3pystatus fbxkb python-autoflake python-pyalsaaudio spotify"
 
 # rubick's scripts repo url
 SCRIPTS_REPO_URL="https://github.com/rubickcz/scripts"
