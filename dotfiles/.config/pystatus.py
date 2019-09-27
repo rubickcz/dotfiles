@@ -17,14 +17,14 @@ status.register(
 # audio volume
 status.register(
     "pulseaudio",
-    format="\u3000 {volume}%",
+    format="\u3000{volume}%",
     color_muted="#FFFF00"
 )
 
 # brightness
 status.register(
     "backlight",
-    format="\u3000 {percentage}%",
+    format="\u3000{percentage}%",
     backlight="intel_backlight",
     on_upscroll=None,
     on_downscroll=None,
@@ -34,7 +34,7 @@ status.register(
 # battery
 status.register(
     'battery',
-    format='\u3000 {percentage:.0f}%[ {consumption:.2f}W][ ({remaining})]',
+    format='\u3000{percentage:.0f}%[ {consumption:.2f}W][ ({remaining})]',
     not_present_text="No battery",
     alert=True,
     alert_percentage=5,
@@ -77,28 +77,28 @@ status.register(
 # load
 status.register(
     "load",
-    format="\uf0e7\u3000 {avg1}",
+    format="\uf0e7\u3000{avg1}",
     color="#84daff"
 )
 
 # available RAM
 status.register(
     "mem",
-    format="\u3000 {percent_used_mem}%",
+    format="\u3000{percent_used_mem}%",
     divisor=1024**3
 )
 
 # free disk space
 status.register("disk",
     path="/",
-    format="\u3000 {avail}G"
+    format="\u3000{avail}G"
 )
 
 
 # ping
 status.register(
     "ping",
-    format="\uF079\u3000 {ping} ms",
+    format="\uF079\u3000{ping} ms",
     format_down="unreachable",
     color="#1ad892"
 )

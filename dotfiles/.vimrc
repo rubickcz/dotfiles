@@ -27,6 +27,7 @@ Plugin 'fisadev/vim-isort'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tell-k/vim-autoflake'
+Plugin 'tpope/vim-fugitive'
 
 " --> COLORS
 Plugin 'nanotech/jellybeans.vim'
@@ -44,6 +45,7 @@ set nocompatible               " Use Vi Improved
 set number                     " Show line numbers
 set ruler                      " Show cursor position in right bottom corner
 set ignorecase                 " Ignore case when searching
+set smartcase                  " Turn on case when uppercase char is in search string
 set hlsearch                   " Highlight search matches
 set incsearch                  " Incremental search (search as you type)
 set history=1000               " Command history size
@@ -218,6 +220,7 @@ au BufNewFile,BufRead *.html call SetHTMLSettings()
 au BufNewFile,BufRead *.css call SetCSSSettings()
 au BufNewFile,BufRead *.less call SetCSSSettings()
 au BufNewFile,BufRead *.yml call SetHTMLSettings()
+au BufNewFile,BufRead *.toml call SetHTMLSettings()
 
 " Don't open doc string window when using completion
 autocmd FileType python setlocal completeopt-=preview
