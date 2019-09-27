@@ -1,2 +1,1 @@
-ENTRY "Mounted media (/mnt)" URL "/mnt"
-ENTRY "Downloads (~/downloads)" URL "~/downloads"
+ENTRY "Mounted media (/media)" URL "/media"
