@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:dina 10
+font pango:Dejavu Sans Mono 12
 floating_modifier $mod
 
 # start a terminal

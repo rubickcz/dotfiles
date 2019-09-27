@@ -27,6 +27,7 @@ Plugin 'fisadev/vim-isort'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tell-k/vim-autoflake'
+Plugin 'tpope/vim-fugitive'
 
 " --> COLORS
 Plugin 'nanotech/jellybeans.vim'
