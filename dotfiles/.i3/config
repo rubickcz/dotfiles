@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:Dejavu Sans Mono 12
+font pango:DejaVu Sans Mono 10
 floating_modifier $mod
 
 # start a terminal
@@ -117,6 +117,8 @@ bindsym $mod+0 workspace back_and_forth
 # Volume contol
 bindsym XF86AudioLowerVolume exec amixer sset Master 2%-
 bindsym XF86AudioRaiseVolume exec amixer sset Master 2%+
+bindsym $mod+Down exec amixer sset Master 2%-
+bindsym $mod+Up exec amixer sset Master 2%+
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
 
 # Brightness control
@@ -157,6 +159,7 @@ exec urxvtd
 exec numlockx
 exec nm-applet
 exec blueman-applet
+exec monitor-toggle.sh
 
 # Other
 focus_follows_mouse no

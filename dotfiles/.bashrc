@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+source ~/.bash_git
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -49,6 +51,7 @@ alias top10pkg='pacman -Qi|awk '"'"'/^Installed Size/{print int($4), name} /^Nam
 alias pacman-disowned-dirs="comm -23 <(sudo find / \( -path '/dev' -o -path '/sys' -o -path '/run' -o -path '/tmp' -o -path '/mnt' -o -path '/srv' -o -path '/proc' -o -path '/boot' -o -path '/home' -o -path '/root' -o -path '/media' -o -path '/var/lib/pacman' -o -path '/var/cache/pacman' \) -prune -o -type d -print | sed 's/\([^/]\)$/\1\//' | sort -u) <(pacman -Qlq | sort -u)"
 # show files not owned by any package
 alias pacman-disowned-files="comm -23 <(sudo find / \( -path '/dev' -o -path '/sys' -o -path '/run' -o -path '/tmp' -o -path '/mnt' -o -path '/srv' -o -path '/proc' -o -path '/boot' -o -path '/home' -o -path '/root' -o -path '/media' -o -path '/var/lib/pacman' -o -path '/var/cache/pacman' \) -prune -o -type f -print | sort -u) <(pacman -Qlq | sort -u)"
+alias spotify="spotify --force-device-scale-factor=2"
 
 ###################################################
 
@@ -57,7 +60,7 @@ complete -cf sudo
 complete -cf man
 
 # Set prompt
-PS1='[\u@\h \W]\$ '
+export PS1="\[\033[34m\]\u@\h\[\033[00m\] \[\033[32m\]\w\[\033[1;33m\]\$(__git_ps1)\[\033[00m\] $ "
 
 # disable XOFF (terminal freeze by pressing Ctrl-S)
 stty ixany
@@ -91,6 +94,15 @@ extract ()
   else
     echo "'$1' is not a valid file"
   fi
+}
+
+passgen()
+{
+    LEN=$1
+    if [ -z $LEN ]; then
+        LEN=50
+    fi
+    </dev/urandom tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' | head -c $LEN  ; echo
 }
 
 # include private settings

@@ -55,13 +55,15 @@ eval $(ssh-agent)
 xset -b
 
 # Make mouse quicker
-xinput set-prop "2.4G Wireless Optical Mouse" "libinput Accel Speed" 0.2
+xinput set-prop "2.4G Wireless Optical Mouse" "libinput Accel Speed" 0.9
 
 # Stuff related to golem machine (desktop pc)
 if [ "$HOSTNAME" = golem ]; then
     # set mouse sensitivity & acceleration
-    xinput set-prop 13 269 1.5
-    xset m 3 1
+    # TODO: dynamically find mouse id and mouse property ID, this was notworking since mouse has id 12 not 13!
+    # xinput set-prop 13 269 1.5
+    # xset m 3 1
+    xinput set-prop "pointer:Logitech MX Master 2S" "libinput Accel Speed" 1
 
     # disable second monitor (VGA) if main monitor (HDMI) is connected
     xrandr | grep "HDMI1 connected" > /dev/null
@@ -69,6 +71,10 @@ if [ "$HOSTNAME" = golem ]; then
         xrandr --output DP1 --off
         xrandr --output HDMI1 --primary
     fi
+
+    # 4K monitor tweaks
+    xrandr --dpi 220
+    export GDK_SCALE=2
 fi
 
 # Stuff related to marshadow machine (Dell E6400 laptop)
