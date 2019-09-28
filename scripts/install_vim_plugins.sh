@@ -4,7 +4,8 @@
 # ======================
 # Installs Vim plugins.
 
-source ./functions.sh
+SCRIPT_DIR=`dirname $(readlink -f $0)`
+source "$SCRIPT_DIR/functions.sh"
 
 # ------------------------------------------------------------------------------
 # Global variables
@@ -20,7 +21,7 @@ VIM_UNDO_DIR="$HOME/.vim/undo/"
 # Logic
 # ------------------------------------------------------------------------------
 
-msg "Installing Vim plugins..."
+title "Installing Vim plugins..."
 
 # clone Vundle
 if [ ! -d "$VUNDLE_PATH" ]; then
@@ -35,4 +36,4 @@ if [ ! -d "$VIM_UNDO_DIR" ]; then
     mkdir -p "$VIM_UNDO_DIR"
 fi
 
-success "Done installing Vim plugins"
+success "Done"

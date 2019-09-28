@@ -2,13 +2,19 @@
 
 # makesymlinks.sh
 # ===============
-# Backups original config files in your $HOME directory and replaces them with
+# Backups original config files in $HOME directory and replaces them with
 # symlinks pointing to config files in this repository.
 #
 # Inspired by:
 # http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
 
-source ./functions.sh
+SCRIPT_DIR=`dirname $(readlink -f $0)`
+source "$SCRIPT_DIR/functions.sh"
+
+if [[ $PWD != `dirname "$SCRIPT_DIR"` ]]; then
+    error "Please invoke this script from repo's root."
+    exit 1
+fi
 
 # ----------------
 # Global variables
@@ -21,7 +27,7 @@ BACKUP_DIR="$PWD/backup/`date "+%Y-%m-%d_%H%M%S"`"
 # Logic
 # -----
 
-msg "Creating dotfiles symlinks..."
+title "Creating dotfiles symlinks..."
 
 echo "Creating a backup directory: $BACKUP_DIR/"
 mkdir -p $BACKUP_DIR
@@ -51,4 +57,6 @@ for FILE in `find dotfiles/ -type f`; do
 
 done
 
-success "Done making symlinks"
+touch "$HOME/.bashrc_private"
+
+success "Done"
