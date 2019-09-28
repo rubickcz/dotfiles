@@ -126,7 +126,7 @@ fi
 
 # install rest of packages
 title "Installing packages and desktop apps..."
-yay -Sy --needed $PACKAGES $DESKTOP_APPS
+yay --needed $PACKAGES $DESKTOP_APPS
 
 # install scripts
 which alert.sh &>/dev/null
