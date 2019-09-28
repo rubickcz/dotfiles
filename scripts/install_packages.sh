@@ -120,7 +120,7 @@ if [ `has_pkg yay` -ne 0 ]; then
     wget https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
     tar xzvf yay.tar.gz
     cd yay
-    makepkg -f
+    makepkg -fs
     sudo pacman -U --needed *tar.xz
 fi
 
