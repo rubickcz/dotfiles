@@ -1,0 +1,7 @@
+[user]
+	email = kulaty.o@gmail.com
+	name = Ondrej Kulaty
+[commit]
+    gpgsign = true
+[gpg]
+    program = gpg
