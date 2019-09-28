@@ -151,7 +151,7 @@ if [ $? -ne 0 ]; then
     git clone "$SCRIPTS_REPO_URL" "$REPO_PATH"
 
     # symlink to PATH
-    mkdir "$HOME/bin/"
+    mkdir -p "$HOME/bin/"
     ln -s "$REPO_PATH" "$HOME/bin/"
 fi
 
