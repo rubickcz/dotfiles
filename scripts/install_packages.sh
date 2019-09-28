@@ -12,6 +12,7 @@ source "$SCRIPT_DIR/functions.sh"
 # ------------------------------------------------------------------------------
 
 INITIAL_PACKAGES="
+    base-devel
     git
     wget
 "
@@ -19,7 +20,6 @@ INITIAL_PACKAGES="
 PACKAGES="
     ack
     alsa-utils
-    base-devel
     bash
     bash-completion
     bluez-utils
