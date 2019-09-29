@@ -70,18 +70,15 @@ if socket.gethostname() == 'golem':
         color='#84daff',
     )
 
-if socket.gethostname() in ['golem', 'guzzlord']:
-    tz = '2'
-else:
-    tz = '0'
+if socket.gethostname() != 'golem':
 
-# cpu temp
-status.register(
-    'temp',
-    format='\uf2c8 {temp:.0f}°C',
-    color='#84daff',
-    file='/sys/class/thermal/thermal_zone'+tz+'/temp',
-)
+    # cpu temp
+    status.register(
+        'temp',
+        format='\uf2c8 {temp:.0f}°C',
+        color='#84daff',
+        file='/sys/class/thermal/thermal_zone0/temp',
+    )
 
 # cpu frequency
 status.register(

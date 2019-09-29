@@ -34,8 +34,8 @@ PACKAGES="
     gvfs
     gvim
     htop
-    i3lock
     i3-wm
+    i3lock
     i3pystatus-git
     libnotify
     networkmanager-openvpn
@@ -52,12 +52,14 @@ PACKAGES="
     pulseaudio-bluetooth
     python-autoflake
     python-colour
+    python-geoip
     python-isort
     python-jedi
     python-netifaces
     python-psutil
     python-pyalsaaudio
     python-virtualenvwrapper
+    python-xkbgroup
     redshift
     scrot
     tk
