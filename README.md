@@ -87,4 +87,4 @@ This is most likely caused by some issue with video driver. Make sure drivers fo
 * switch to other virtual terminal (using e.g. `Ctrl+Alt+F2`) and then back
 
 #### Screen is tearing
-The symptoms are visible horizontal lines on fast moving objects (e.g. in a video). The solution, currently for nVidia only, is to switch on **X Server Display Configuration -> Advanced -> Force Full Composition Pipeline**.
+The symptoms are visible horizontal lines on fast moving objects (e.g. in a video). The solution, currently for nVidia only, is to switch on **X Server Display Configuration -> Advanced -> Force Full Composition Pipeline** in nVidia GUI config. To make effect permanent, let nVidia GUI config write values into file and copy it to `/etc/X11/xorg.conf.d/20-nvidia.conf`.
