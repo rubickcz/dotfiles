@@ -47,40 +47,16 @@ devmon \
 # start ssh agent
 eval $(ssh-agent)
 
-###############################################
-# Custom HW related stuff
-###############################################
-
 # disable PC speaker beeping
 xset -b
 
 # Make mouse quicker
-xinput set-prop "2.4G Wireless Optical Mouse" "libinput Accel Speed" 0.9
+xinput set-prop "2.4G Wireless Optical Mouse" "libinput Accel Speed" 1
+xinput set-prop "pointer:Logitech MX Master 2S" "libinput Accel Speed" 1
 
-# Stuff related to golem machine (desktop pc)
 if [ "$HOSTNAME" = golem ]; then
-    # set mouse sensitivity & acceleration
-    # TODO: dynamically find mouse id and mouse property ID, this was notworking since mouse has id 12 not 13!
-    # xinput set-prop 13 269 1.5
-    # xset m 3 1
-    xinput set-prop "pointer:Logitech MX Master 2S" "libinput Accel Speed" 1
-
-    # disable second monitor (VGA) if main monitor (HDMI) is connected
-    xrandr | grep "HDMI1 connected" > /dev/null
-    if [ $? -eq 0 ]; then
-        xrandr --output DP1 --off
-        xrandr --output HDMI1 --primary
-    fi
-
     # 4K monitor tweaks
-    xrandr --dpi 220
     export GDK_SCALE=2
-fi
-
-# Stuff related to marshadow machine (Dell E6400 laptop)
-if [ "$HOSTNAME" = marshadow ]; then
-    # disable HDD power management (causes clicking sounds)
-    sudo hdparm -B 254 /dev/sda
 fi
 
 if [ "$HOSTNAME" = guzzlord ]; then
@@ -98,8 +74,5 @@ if [ "$HOSTNAME" = lumineon ]; then
     xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.35
 fi
 
-###############################################
-# Start window manager
-###############################################
-
+# start window manager
 exec i3
