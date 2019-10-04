@@ -166,4 +166,13 @@ sudo systemctl enable bluetooth.service
 sudo systemctl enable docker.service
 set +x
 
+# Add user to common groups
+title "Adding you to common groups..."
+sudo gpasswd -a "$USER" wheel
+sudo gpasswd -a "$USER" audio
+sudo gpasswd -a "$USER" video
+sudo gpasswd -a "$USER" uucp
+sudo gpasswd -a "$USER" lp
+sudo gpasswd -a "$USER" docker
+
 success "Done"
