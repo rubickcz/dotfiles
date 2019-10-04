@@ -48,7 +48,7 @@ Following steps were not automated by a script, because it is easier/more conven
 #### HW dependent packages
 1. Depending on your CPU, install [microcode updates](https://wiki.archlinux.org/index.php/Microcode).
 2. Install video drivers:
-    * for nVidia: `pacman -S nvidia, nvidia-settings`
+    * for nVidia: `pacman -S nvidia nvidia-settings`
     * for Intel: [wiki](https://wiki.archlinux.org/index.php/Intel_graphics)
 
 #### SSH
@@ -75,5 +75,14 @@ Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`, it will
 
 ## Troubleshooting
 
-#### X.org does not start
-This is most likely caused by some issue with video driver. Make sure drivers for your GPU are installed.
+#### /boot is full
+This is caused by mounting EFI partition created by Windows (it's size is around 100MB) as `/boot`. The EFI parition should be mounted to `/efi`, otherwise Linux kernel image will fill up the space quickly.
+
+#### X.org does not start or no login prompt
+This is most likely caused by some issue with video driver. Make sure drivers for your GPU are installed. Sometimes following actions help:
+* reboot
+* plug monitor to another output (if available)
+* switch to other virtual terminal (using e.g. `Ctrl+Alt+F2`) and then back
+
+#### Screen is tearing
+The symptoms are visible horizontal lines on fast moving objects (e.g. in a video). The solution, currently for nVidia only, is to switch on **X Server Display Configuration -> Advanced -> Force Full Composition Pipeline**.
