@@ -18,7 +18,6 @@ Here's a quick look what you get after installation (click to full size):
 | [mc](https://www.archlinux.org/packages/community/x86_64/mc/)  | file manager | [`.config/mc/`](https://github.com/rubickcz/dotfiles/tree/master/dotfiles/.config/mc)  |
 | [openssh](https://www.archlinux.org/packages/core/x86_64/openssh/)  | secure shell | [`.ssh/config`](https://github.com/rubickcz/dotfiles/tree/master/dotfiles/.ssh/config)  |
 | [xorg](https://www.archlinux.org/packages/extra/x86_64/freetype2/) | display server | [`.config/user-dirs.dirs`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.config/user-dirs.dirs)<br>[`.local/share/applications/mimeapps.list`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.local/share/applications/mimeapps.list)<br>[`.xinitrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.xinitrc)  |
-| [xxkb](https://www.archlinux.org/packages/community/x86_64/xxkb/) | keyboard layout indicator |[`.xxkb/`](https://github.com/rubickcz/dotfiles/tree/master/dotfiles/.xxkb)<br>[`.xxkbrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.xxkbrc)  |
 | [rxvt-unicode](https://www.archlinux.org/packages/community/x86_64/rxvt-unicode/) | terminal emulator | [`.Xdefaults`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.Xdefaults) |
 | [bash](https://www.archlinux.org/packages/core/x86_64/bash/) | unix shell | [`.bash_profile`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.bash_profile)<br>[`.bashrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.bashrc)  |
 | [vim](https://www.archlinux.org/packages/extra/x86_64/gvim/)  | text editor | [`.vimrc`](https://github.com/rubickcz/dotfiles/blob/master/dotfiles/.vimrc) |
@@ -30,10 +29,10 @@ Here's a quick look what you get after installation (click to full size):
 * **lumineon** - Thinkpad X220
 
 ## Pre install
-It is assumed you have the base Arch Linux system installed (follow [installation guide](https://wiki.archlinux.org/index.php/Installation_guide)). There's no need to install Xorg or any desktop environment, as it will be installed during dotfiles setup. You should only be logged in as a normal user and make sure `sudo` command works.
+You need to install base Arch Linux system. Either follow [installation guide](https://wiki.archlinux.org/index.php/Installation_guide) or use [Anarchy Linux](https://www.anarchylinux.org/). There's no need to install Xorg, desktop environment or any additional packages, as they will be installed during dotfiles setup. You should just be able to log in as a normal user and make sure `sudo` command works.
 
 ## Installation
-1. Clone the repository:
+1. Clone the repository (you will probably need to install [git](https://www.archlinux.org/packages/extra/x86_64/git/)):
 ```
 $ git clone https://github.com/rubickcz/dotfiles.git && cd dotfiles
 ```
@@ -41,13 +40,16 @@ $ git clone https://github.com/rubickcz/dotfiles.git && cd dotfiles
 ```
 $ ./setup.sh
 ```
-3. Log out and in again to load X.org and i3 window manager.
+3. Reboot and log in again to load X.org and i3 window manager.
 
 ## Post install
 Following steps were not automated by a script, because it is easier/more convenient to do them by hand.
 
-#### Wallpaper
-Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`, it will be set at startup.
+#### HW dependent packages
+1. Depending on your CPU, install [microcode updates](https://wiki.archlinux.org/index.php/Microcode).
+2. Install video drivers:
+    * for nVidia: `pacman -S nvidia nvidia-settings`
+    * for Intel: [wiki](https://wiki.archlinux.org/index.php/Intel_graphics)
 
 #### SSH
 * Copy your SSH keys to `~/.ssh`
@@ -68,18 +70,19 @@ git clone <repo_url> ~/.password-store
 #### Private .bashrc
 You can add/copy your private aliases and settings to `~/.private_bashrc`.
 
-
-## Post install (machine specific)
-Following steps are for my specific machines only.
-#### Marshadow
-Enable `hdparm` command to be launched via sudo without password by adding this line via `visudo`:
-```
-username ALL=(ALL) NOPASSWD: /usr/bin/hdparm
-```
+#### Wallpaper
+Copy your favorite wallpaper to `~/media/images/wallpapers/current.jpg`, it will be set at startup.
 
 ## Troubleshooting
 
-#### X.org does not start
-This is most likely caused by some issue with video driver. Make sure drivers for your GPU are installed.
+#### /boot is full
+This is caused by mounting EFI partition created by Windows (it's size is around 100MB) as `/boot`. The EFI parition should be mounted to `/efi`, otherwise Linux kernel image will fill up the space quickly.
 
+#### X.org does not start or no login prompt
+This is most likely caused by some issue with video driver. Make sure drivers for your GPU are installed. Sometimes following actions help:
+* reboot
+* plug monitor to another output (if available)
+* switch to other virtual terminal (using e.g. `Ctrl+Alt+F2`) and then back
 
+#### Screen is tearing
+The symptoms are visible horizontal lines on fast moving objects (e.g. in a video). The solution, currently for nVidia only, is to switch on **X Server Display Configuration -> Advanced -> Force Full Composition Pipeline**.
