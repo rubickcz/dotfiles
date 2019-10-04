@@ -1,3 +1,6 @@
+! urxvt settings
+! ------------------------------------------------------------------
+
 ! No Trasnparency
 URxvt.transparent: true
 URxvt.shading: 0
@@ -13,9 +16,12 @@ URxvt.font: xft:DejavuSansMono:size=13
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
-! Colors
+! color settings
+! ------------------------------------------------------------------
+
 *background: #50404D
 *foreground: #F2F3F4
+
 ! black
 *color0            : #2E2E34343636
 *color8            : #555557575353
