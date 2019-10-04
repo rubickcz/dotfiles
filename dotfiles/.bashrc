@@ -60,7 +60,7 @@ complete -cf sudo
 complete -cf man
 
 # Set prompt
-export PS1="\[\u@\h:\[\033[1;34m\]\w\[\033[1;33m\]\$(__git_ps1)\[\033[00m\] $ "
+export PS1="\u@\h:\[\033[1;34m\]\w\[\033[1;33m\]\$(__git_ps1)\[\033[00m\] $ "
 
 # disable XOFF (terminal freeze by pressing Ctrl-S)
 stty ixany
