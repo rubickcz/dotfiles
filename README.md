@@ -36,20 +36,22 @@ You need to install base Arch Linux system. Either follow [installation guide](h
 ```
 $ git clone https://github.com/rubickcz/dotfiles.git && cd dotfiles
 ```
+
 2. Execute `setup.sh` and follow instructions:
 ```
 $ ./setup.sh
 ```
-3. Reboot and log in again to load X.org and i3 window manager.
+
+3. Install HW dependent packages:
+* Depending on your CPU, install [microcode updates](https://wiki.archlinux.org/index.php/Microcode).
+* Install video drivers:
+    * for nVidia: `pacman -S nvidia nvidia-settings`
+    * for Intel: [wiki](https://wiki.archlinux.org/index.php/Intel_graphics) 
+    
+4. Reboot and log in again to load X.org and i3 window manager.
 
 ## Post install
 Following steps were not automated by a script, because it is easier/more convenient to do them by hand.
-
-#### HW dependent packages
-1. Depending on your CPU, install [microcode updates](https://wiki.archlinux.org/index.php/Microcode).
-2. Install video drivers:
-    * for nVidia: `pacman -S nvidia nvidia-settings`
-    * for Intel: [wiki](https://wiki.archlinux.org/index.php/Intel_graphics)
 
 #### SSH
 * Copy your SSH keys to `~/.ssh`
