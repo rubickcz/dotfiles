@@ -13,14 +13,6 @@ status.register(
     on_leftclick='gsimplecal',
 )
 
-# audio volume
-status.register(
-    'pulseaudio',
-    format='\uf028 {volume}%',
-    color_muted='#FFFF00',
-)
-
-
 # keyboard layout
 status.register(
     'xkblayout',
@@ -37,6 +29,13 @@ status.register(
     color='#ff8c00',
     format_inhibit=['ON', 'OFF'],
     redshift_parameters=['-l', '50.08804:14.42076'],
+)
+
+# audio volume
+status.register(
+    'pulseaudio',
+    format='\uf028 {volume}%',
+    color_muted='#FFFF00',
 )
 
 if socket.gethostname() != 'golem':

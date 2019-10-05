@@ -38,6 +38,7 @@ PACKAGES="
     i3lock
     i3pystatus-git
     libnotify
+    lshw
     networkmanager-openvpn
     noto-fonts-emoji
     ntfs-3g
