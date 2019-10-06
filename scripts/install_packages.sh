@@ -29,6 +29,7 @@ PACKAGES="
     docker
     docker-compose
     freetype2
+    gimp-nufraw
     gnupg
     gtk-engines
     gvfs
