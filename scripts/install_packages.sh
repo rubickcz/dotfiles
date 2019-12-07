@@ -93,12 +93,14 @@ DESKTOP_APPS="
     gnome-disk-utility
     gsimplecal
     inkscape
+    libreoffice-still
     mc
     network-manager-applet
     pavucontrol
     postman-bin
     rxvt-unicode
     spotify
+    tor-browser
     transmission-gtk
     vlc
 "
