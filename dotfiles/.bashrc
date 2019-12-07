@@ -36,7 +36,7 @@ alias grep='grep --color=auto'
 alias pingg='ping 8.8.8.8'
 # show current public IP address
 alias myip='wget -q -O - http://wtfismyip.com/text'
-alias pacup='sudo yay -Syu'
+alias pacup='yay -Syu'
 alias cd..='cd ..'
 alias i3config='vim ~/.i3/config'
 alias vimrc='vim ~/.vimrc'
@@ -45,12 +45,13 @@ alias webserver-here='python -m http.server 8000'
 alias top10='find . -type f -exec du -h {} + | sort -rh | head -n 10'
 alias feh='feh -F -d -S filename'
 # top 10 largest installed packages
-alias top10pkg='pacman -Qi|awk '"'"'/^Installed Size/{print int($4), name} /^Name/{name=$3}'"'"'|sort -nr | head -n 10'
+alias top10pkg="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | head -n 10"
 # show dirs not owned by any package
 alias pacman-disowned-dirs="comm -23 <(sudo find / \( -path '/dev' -o -path '/sys' -o -path '/run' -o -path '/tmp' -o -path '/mnt' -o -path '/srv' -o -path '/proc' -o -path '/boot' -o -path '/home' -o -path '/root' -o -path '/media' -o -path '/var/lib/pacman' -o -path '/var/cache/pacman' \) -prune -o -type d -print | sed 's/\([^/]\)$/\1\//' | sort -u) <(pacman -Qlq | sort -u)"
 # show files not owned by any package
 alias pacman-disowned-files="comm -23 <(sudo find / \( -path '/dev' -o -path '/sys' -o -path '/run' -o -path '/tmp' -o -path '/mnt' -o -path '/srv' -o -path '/proc' -o -path '/boot' -o -path '/home' -o -path '/root' -o -path '/media' -o -path '/var/lib/pacman' -o -path '/var/cache/pacman' \) -prune -o -type f -print | sort -u) <(pacman -Qlq | sort -u)"
 alias spotify="spotify --force-device-scale-factor=2"
+alias makej="pydev"
 
 ###################################################
 
