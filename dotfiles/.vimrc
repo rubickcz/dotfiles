@@ -214,6 +214,7 @@ autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
 " indentation for Python according to PEP8
 au BufNewFile,BufRead *.py call SetPythonSettings()
 au BufNewFile,BufRead *.js call SetPythonSettings()
+au BufNewFile,BufRead *.sh call SetPythonSettings()
 
 " indentation for HTML & CSS
 au BufNewFile,BufRead *.html call SetHTMLSettings()

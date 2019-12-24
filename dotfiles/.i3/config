@@ -160,6 +160,7 @@ exec numlockx
 exec nm-applet
 exec blueman-applet
 exec monitor-toggle.sh
+exec stretch-break.sh
 
 # Other
 focus_follows_mouse no
