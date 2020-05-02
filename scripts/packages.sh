@@ -1,0 +1,98 @@
+# packages.sh
+# ===============
+# List of packages to be installed
+
+INITIAL_PACKAGES="
+    base-devel
+    git
+    wget
+"
+
+PACKAGES="
+    ack
+    alsa-utils
+    bash
+    bash-completion
+    bluez-utils
+    ctags
+    cups
+    dnsutils
+    docker
+    docker-compose
+    freetype2
+    gimp-nufraw
+    gnupg
+    gtk-engines
+    gvfs
+    gvim
+    htop
+    i3-wm
+    i3lock
+    i3pystatus-git
+    libnotify
+    lshw
+    networkmanager-openvpn
+    noto-fonts-emoji
+    ntfs-3g
+    ntp
+    numlockx
+    openssh
+    pacman-contrib
+    pass
+    polkit
+    pulseaudio
+    pulseaudio-alsa
+    pulseaudio-bluetooth
+    python-autoflake
+    python-colour
+    python-geoip
+    python-isort
+    python-jedi
+    python-netifaces
+    python-psutil
+    python-pyalsaaudio
+    python-virtualenvwrapper
+    python-xkbgroup
+    redshift
+    screenfetch
+    scrot
+    tk
+    ttf-dejavu
+    ttf-font-awesome
+    udevil
+    unrar
+    unzip
+    xdg-user-dirs
+    xdotool
+    xf86-input-libinput
+    xorg
+    xorg-xinit
+    xorg-xinput
+    xorg-xrandr
+    youtube-dl
+    zip
+"
+
+DESKTOP_APPS="
+    audacity
+    blueman
+    chromium
+    dmenu
+    dunst
+    evince
+    feh
+    gimp
+    gnome-disk-utility
+    gsimplecal
+    inkscape
+    libreoffice-still
+    mc
+    network-manager-applet
+    pavucontrol
+    postman-bin
+    rxvt-unicode
+    spotify
+    tor-browser
+    vlc
+    transmission-gtk
+"
