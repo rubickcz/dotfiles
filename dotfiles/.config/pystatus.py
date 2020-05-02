@@ -132,14 +132,14 @@ status.register(
 )
 
 # bitcoin
-status.register(
-    'bitcoin',
-    format='\uf15a {last_price}',
-    color='#e6be8a',
-    on_rightclick=None,
-    on_upscroll=None,
-    on_downscroll=None,
-)
+# status.register(
+#     'bitcoin',
+#     format='\uf15a {last_price}',
+#     color='#e6be8a',
+#     on_rightclick=None,
+#     on_upscroll=None,
+#     on_downscroll=None,
+# )
 
 # weather
 status.register(

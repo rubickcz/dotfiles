@@ -215,6 +215,7 @@ autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
 au BufNewFile,BufRead *.py call SetPythonSettings()
 au BufNewFile,BufRead *.js call SetPythonSettings()
 au BufNewFile,BufRead *.sh call SetPythonSettings()
+au BufNewFile,BufRead *.rst call SetPythonSettings()
 
 " indentation for HTML & CSS
 au BufNewFile,BufRead *.html call SetHTMLSettings()
@@ -262,6 +263,9 @@ map <PageDown> <nop>
 " PLUGIN specific settings
 "======================================================================
 
+" Autoflake
+let g:autoflake_remove_all_unused_imports=1
+
 " Focus Tags List when opened
 let g:Tlist_GainFocus_On_ToggleOpen=1
 " Show Tags list on the right
@@ -284,3 +288,5 @@ silent! nunmap <leader>bs
 let g:vim_isort_python_version = 'python3'
 
 " Todo ignore pyc and other generated files
+"
+:let $PYTHONPATH .= ':_local/site-packages/'
