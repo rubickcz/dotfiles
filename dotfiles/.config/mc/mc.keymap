@@ -1,2 +1,7 @@
 [main]
 Find = alt-/
+
+[panel]
+SortBySize = alt-b
+SortByName = alt-n
+SortByMTime = alt-m
