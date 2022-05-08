@@ -53,6 +53,7 @@ xset -b
 # Make mouse quicker
 xinput set-prop "2.4G Wireless Optical Mouse" "libinput Accel Speed" 1
 xinput set-prop "pointer:Logitech MX Master 2S" "libinput Accel Speed" 1
+xinput set-prop "pointer:Logitech MX Master 2S" "libinput High Resolution Wheel Scroll Enabled" 0
 
 if [ "$HOSTNAME" = golem ]; then
     # 4K monitor tweaks

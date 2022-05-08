@@ -57,7 +57,7 @@ workspace 9 output VGA1
 # switch to workspace
 bindsym $mod+1 workspace 1:term
 bindsym $mod+2 workspace 2:web
-bindsym $mod+3 workspace 3:viber
+bindsym $mod+3 workspace 3:signal
 bindsym $mod+4 workspace 4:media
 bindsym $mod+5 workspace 5:pdf
 bindsym $mod+6 workspace 6
@@ -69,7 +69,7 @@ bindsym $mod+9 workspace 9
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1:term
 bindsym $mod+Shift+2 move container to workspace 2:web
-bindsym $mod+Shift+3 move container to workspace 3:viber
+bindsym $mod+Shift+3 move container to workspace 3:signal
 bindsym $mod+Shift+4 move container to workspace 4:media
 bindsym $mod+Shift+5 move container to workspace 5:pdf
 bindsym $mod+Shift+6 move container to workspace 6
@@ -126,7 +126,7 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
 # Start Chromium and switch to workspace #2
-bindsym $mod+b exec chromium; workspace 2:web
+bindsym $mod+b exec google-chrome-stable; workspace 2:web
 
 # lock computer
 bindsym $mod+Mod1+l exec i3lock -c 000000
@@ -147,7 +147,8 @@ bindsym $mod+p exec passmenu --type -b -p "PASSWORD STORE:"
 bindsym $mod+Pause exec "i3lock -c 000000;systemctl suspend"
 
 # Application assignments to workspaces
-assign [class="Chromium"] 2:web
+assign [class="Google-chrome"] 2:web
+assign [class="Signal"] 3:signal
 assign [class="Vlc"] 4:media
 assign [class="Evince"] 5:pdf
 
@@ -161,10 +162,11 @@ exec nm-applet
 exec blueman-applet
 exec monitor-toggle.sh
 exec stretch-break.sh
+exec signal-desktop --use-tray-icon --start-in-tray
 
 # Other
 focus_follows_mouse no
-for_window [class="Chromium"] border none
+for_window [class="Google-chrome"] border none
 for_window [class="Gsimplecal"] border none floating enable move absolute position 1700px 30px # this works nice only on FullHD display :(
 
 # Spotify control (next/previous track)

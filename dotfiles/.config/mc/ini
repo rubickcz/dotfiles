@@ -87,6 +87,8 @@ editor_stop_format_chars=-+*\\,.;:&>
 editor_state_full_filename=false
 safe_overwrite=false
 
+shadows=true
+
 [Layout]
 message_visible=true
 keybar_visible=true

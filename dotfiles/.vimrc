@@ -223,6 +223,7 @@ au BufNewFile,BufRead *.css call SetCSSSettings()
 au BufNewFile,BufRead *.less call SetCSSSettings()
 au BufNewFile,BufRead *.yml call SetHTMLSettings()
 au BufNewFile,BufRead *.toml call SetHTMLSettings()
+au BufNewFile,BufRead *.json call SetHTMLSettings()
 
 " Don't open doc string window when using completion
 autocmd FileType python setlocal completeopt-=preview
