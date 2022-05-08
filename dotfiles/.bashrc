@@ -53,6 +53,7 @@ alias pacman-disowned-files="comm -23 <(sudo find / \( -path '/dev' -o -path '/s
 alias spotify="spotify --force-device-scale-factor=2"
 alias makej="pydev"
 alias killdocker="docker kill $(docker ps -q)"
+alias validate-api="docker run -v \$(pwd):/repo node:latest bash -c \"cd /repo && yarn run validate && yarn prettier --check openapi.yaml\""
 
 ###################################################
 
