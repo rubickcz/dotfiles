@@ -39,7 +39,7 @@ fi
 
 # install rest of packages
 title "Installing packages and desktop apps..."
-yay -S --needed $PACKAGES $DESKTOP_APPS
+yay -S --needed $MAIN_PACKAGES $WORK_PACKAGES $DESKTOP_APPS
 
 # install scripts
 which alert.sh &>/dev/null

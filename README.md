@@ -47,7 +47,7 @@ $ ./setup.sh
 * Install video drivers:
     * for nVidia: `pacman -S nvidia nvidia-settings`
     * for Intel: [wiki](https://wiki.archlinux.org/index.php/Intel_graphics) 
-    
+
 4. Reboot and log in again to load X.org and i3 window manager.
 
 ## Post install

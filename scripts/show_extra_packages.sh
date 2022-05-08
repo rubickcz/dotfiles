@@ -8,7 +8,7 @@ SCRIPT_DIR=`dirname $(readlink -f $0)`
 source "$SCRIPT_DIR/functions.sh"
 source "$SCRIPT_DIR/packages.sh"
 
-DOTFILES_PACKAGES=$(echo $INITIAL_PACKAGES $PACKAGES $DESKTOP_APPS yay $(pacman -Qg base-devel | awk '{ print $2 }'))
+DOTFILES_PACKAGES=$(echo $INITIAL_PACKAGES $MAIN_PACKAGES $WORK_PACKAGES $DESKTOP_APPS yay $(pacman -Qg base-devel | awk '{ print $2 }'))
 INSTALLED_PACKAGES=$(pacman -Qte  | awk '{ print $1 }')
 
 title "Extra packages installed on this system:"

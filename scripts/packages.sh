@@ -8,7 +8,7 @@ INITIAL_PACKAGES="
     wget
 "
 
-PACKAGES="
+MAIN_PACKAGES="
     ack
     alsa-utils
     bash
@@ -19,6 +19,7 @@ PACKAGES="
     dnsutils
     docker
     docker-compose
+    dvdbackup
     freetype2
     gimp-nufraw
     gnupg
@@ -29,6 +30,7 @@ PACKAGES="
     i3-wm
     i3lock
     i3pystatus-git
+    iputils
     libnotify
     lshw
     networkmanager-openvpn
@@ -57,6 +59,7 @@ PACKAGES="
     screenfetch
     scrot
     tk
+    trezor-bridge-bin
     ttf-dejavu
     ttf-font-awesome
     udevil
@@ -73,26 +76,34 @@ PACKAGES="
     zip
 "
 
+WORK_PACKAGES="
+    aws-cli-v2-bin
+    bind
+    bindfs
+"
+
 DESKTOP_APPS="
     audacity
     blueman
-    chromium
     dmenu
     dunst
     evince
     feh
     gimp
     gnome-disk-utility
+    google-chrome
     gsimplecal
     inkscape
     libreoffice-still
     mc
     network-manager-applet
     pavucontrol
+    pgadmin4
     postman-bin
     rxvt-unicode
+    signal-desktop
     spotify
     tor-browser
-    vlc
     transmission-gtk
+    vlc
 "
