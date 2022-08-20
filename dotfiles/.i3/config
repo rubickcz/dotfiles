@@ -163,7 +163,7 @@ exec blueman-applet
 exec monitor-toggle.sh
 exec stretch-break.sh
 exec signal-desktop --use-tray-icon --start-in-tray
-exec xautolock -locker "i3lock -c 000000; systemctl suspend" -time 1 -notify 10 -notifier "notify-send -u critical 'Suspending...' 'The computer will suspend in 10 seconds!'"
+exec xautolock -locker "i3lock -c 000000; systemctl suspend" -time 10 -notify 10 -notifier "notify-send -u critical 'Suspending...' 'The computer will suspend in 10 seconds!'"
 
 # Other
 focus_follows_mouse no
