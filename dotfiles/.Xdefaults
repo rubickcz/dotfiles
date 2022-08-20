@@ -15,6 +15,9 @@ URxvt.font: xft:DejavuSansMono:size=13
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
+! Disable paste confirmation
+URxvt.perl-ext-common:-confirm-paste
+
 ! color settings
 ! ------------------------------------------------------------------
 
