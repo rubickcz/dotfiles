@@ -65,6 +65,7 @@ MAIN_PACKAGES="
     udevil
     unrar
     unzip
+    xautolock
     xdg-user-dirs
     xdotool
     xf86-input-libinput
