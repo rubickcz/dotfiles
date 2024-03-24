@@ -119,3 +119,5 @@ fi
 export WORKON_HOME=$HOME/other/venvs
 export PROJECT_HOME=$HOME/projects
 source /usr/bin/virtualenvwrapper.sh
+
+complete -C /usr/bin/terraform terraform

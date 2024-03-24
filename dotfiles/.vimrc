@@ -28,6 +28,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tell-k/vim-autoflake'
 Plugin 'tpope/vim-fugitive'
+Plugin 'hashivim/vim-terraform'
 
 " --> COLORS
 Plugin 'nanotech/jellybeans.vim'
