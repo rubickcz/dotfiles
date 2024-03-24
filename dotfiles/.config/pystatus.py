@@ -100,6 +100,14 @@ status.register(
     format='\uf2db {percent_used_mem}%',
 )
 
+if socket.gethostname() == 'golem':
+
+    # free disk space on SAMSUNG
+    status.register('disk',
+        path='/samsung',
+        format='\uf1c0 {avail} GB',
+    )
+
 # free disk space
 status.register('disk',
     path='/',
