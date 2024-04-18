@@ -52,6 +52,7 @@ xset -b
 
 # Make mouse quicker
 xinput set-prop "2.4G Wireless Optical Mouse" "libinput Accel Speed" 1
+xinput set-prop "A4Tech PS/2+USB Mouse" "libinput Accel Speed" 1
 xinput set-prop "pointer:Logitech MX Master 2S" "libinput Accel Speed" 1
 xinput set-prop "pointer:Logitech MX Master 2S" "libinput High Resolution Wheel Scroll Enabled" 0
 
@@ -75,6 +76,14 @@ if [ "$HOSTNAME" = lumineon ]; then
     # touchpad configuration
     xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
     xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.35
+fi
+
+if [ "$HOSTNAME" = devil ]; then
+    # set correct primary screen
+    (sleep 3; xrandr --output eDP-1 --primary || xrandr --output eDP1 --primary) &
+    # touchpad configuration
+    xinput set-prop "MSFT0001:01 04F3:3247 Touchpad" "libinput Tapping Enabled" 1
+    xinput set-prop "MSFT0001:01 04F3:3247 Touchpad" "libinput Accel Speed" 0.35
 fi
 
 # start window manager

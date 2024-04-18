@@ -34,7 +34,7 @@ if [ `has_pkg yay` -ne 0 ]; then
     tar xzvf yay.tar.gz
     cd yay
     makepkg -fs
-    sudo pacman -U --needed *tar.xz
+    sudo pacman -U --needed *.pkg.tar.zst
 fi
 
 # install rest of packages
@@ -75,6 +75,7 @@ sudo systemctl enable ntpd.service
 sudo systemctl enable org.cups.cupsd.service
 sudo systemctl enable bluetooth.service
 sudo systemctl enable docker.service
+sudo systemctl enable NetworkManager
 set +x
 
 # Add user to common groups
