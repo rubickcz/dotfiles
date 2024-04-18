@@ -58,6 +58,8 @@ xinput set-prop "pointer:Logitech MX Master 2S" "libinput High Resolution Wheel 
 if [ "$HOSTNAME" = golem ]; then
     # 4K monitor tweaks
     export GDK_SCALE=2
+    xrandr --output HDMI-0 --primary
+    xrandr --output HDMI-1 --auto --left-of HDMI-0
 fi
 
 if [ "$HOSTNAME" = guzzlord ]; then

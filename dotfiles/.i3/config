@@ -52,8 +52,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # set default workspaces for monitors
-workspace 1:term output HDMI3
-workspace 9 output VGA1
+workspace 1:term output HDMI-0
+workspace 9 output HDMI-1
 
 # switch to workspace
 bindsym $mod+1 workspace 1:term
@@ -108,6 +108,7 @@ bar {
         status_command python ~/.config/pystatus.py
         tray_output primary
         position top
+        output HDMI-0
 }
 
 # -----------------------------------------
