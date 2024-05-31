@@ -35,7 +35,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -129,6 +129,9 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
 
 # Start Chromium and switch to workspace #2
 bindsym $mod+b exec google-chrome-stable --enable-features=VaapiVideoDecoder; workspace 2:web
+
+# start signal in tray
+bindsym $mod+s exec signal-desktop --use-tray-icon --start-in-tray
 
 # lock computer
 bindsym $mod+Mod1+l exec i3lock -c 000000
